@@ -1,0 +1,25 @@
+---
+import ProductCard from '@/components/ProductCard.astro';
+import TelegramCta from '@/components/TelegramCta.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getListedProducts } from '@/lib/content';
+
+const products = (await getListedProducts()).filter((product) => product.data.isFree);
+---
+
+<BaseLayout title="Бесплатные материалы для печати" description="Бесплатные квесты, задания и приглашения для детского праздника — скачать и распечатать.">
+    <div class="stack">
+        <h1>Бесплатно для печати</h1>
+        <p class="muted content">Мини-квесты, задания и приглашения, которые можно забрать бесплатно в нашем Telegram-канале.</p>
+        {
+            products.length > 0 && (
+                <div class="grid">
+                    {products.map((product) => (
+                        <ProductCard product={product} />
+                    ))}
+                </div>
+            )
+        }
+        <TelegramCta />
+    </div>
+</BaseLayout>

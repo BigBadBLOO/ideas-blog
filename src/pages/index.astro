@@ -1,0 +1,92 @@
+---
+import ArticleCard from '@/components/ArticleCard.astro';
+import ProductCard from '@/components/ProductCard.astro';
+import TelegramCta from '@/components/TelegramCta.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getListedArticles, getListedProducts } from '@/lib/content';
+import { CATEGORIES, SITE } from '@/site.config';
+
+const articles = (await getListedArticles()).slice(0, 9);
+const products = (await getListedProducts()).slice(0, 4);
+---
+
+<BaseLayout title={SITE.name} description={SITE.tagline}>
+    <div class="stack home">
+        <section class="hero">
+            <h1>Детский праздник дома — без подготовки</h1>
+            <p class="muted">
+                Готовые квесты с поиском подарка, конкурсы и игры по возрастам. Скачайте, распечатайте — и праздник
+                готов.
+            </p>
+            <a class="button" href="/magazin/">Выбрать квест</a>
+        </section>
+
+        <nav class="categories">
+            {
+                Object.entries(CATEGORIES).map(([slug, category]) => (
+                    <a class="categories__item" href={`/${slug}/`}>
+                        <strong>{category.title}</strong>
+                        <span class="muted">{category.description}</span>
+                    </a>
+                ))
+            }
+        </nav>
+
+        {
+            products.length > 0 && (
+                <section class="stack">
+                    <h2>Готовые квесты</h2>
+                    <div class="grid">
+                        {products.map((product) => (
+                            <ProductCard product={product} />
+                        ))}
+                    </div>
+                </section>
+            )
+        }
+
+        <TelegramCta />
+
+        <section class="stack">
+            <h2>Свежие идеи</h2>
+            <div class="grid">{articles.map((article) => <ArticleCard article={article} />)}</div>
+        </section>
+    </div>
+</BaseLayout>
+
+<style>
+    .home {
+        gap: 48px;
+    }
+
+    .hero {
+        max-width: var(--content-width);
+    }
+
+    .hero h1 {
+        margin: 0 0 12px;
+        font-size: 2.4rem;
+    }
+
+    .hero p {
+        margin: 0 0 24px;
+    }
+
+    .categories {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+    }
+
+    .categories__item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 20px;
+        border-radius: var(--radius);
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        color: inherit;
+        text-decoration: none;
+    }
+</style>

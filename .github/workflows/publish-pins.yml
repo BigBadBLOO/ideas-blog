@@ -1,0 +1,28 @@
+name: Publish pins
+
+on:
+  schedule:
+    - cron: '15 6,11,17 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    if: ${{ vars.PINS_ENABLED == 'true' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node scripts/pinterest.mjs publish 1
+        env:
+          PINTEREST_TOKEN: ${{ secrets.PINTEREST_TOKEN }}
+      - name: Save queue
+        run: |
+          git config user.name "pins-bot"
+          git config user.email "pins-bot@users.noreply.github.com"
+          git add pins/queue.json
+          git diff --cached --quiet || (git commit -m "chore: publish pins" && git push)

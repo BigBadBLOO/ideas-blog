@@ -1,0 +1,51 @@
+---
+import { formatAges } from '@/lib/format';
+
+interface Props {
+    title: string;
+    theme: string;
+    ages: string[];
+    color: string;
+}
+
+const { title, theme, ages, color } = Astro.props;
+---
+
+<div class="cover" style={{ '--cover-color': color }}>
+    <span class="cover__theme">{theme}</span>
+    <span class="cover__title">{title}</span>
+    <span class="cover__ages">{formatAges(ages)}</span>
+</div>
+
+<style>
+    .cover {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        aspect-ratio: 3 / 4;
+        padding: 20px;
+        border-radius: var(--radius);
+        background: linear-gradient(160deg, var(--cover-color), color-mix(in srgb, var(--cover-color) 55%, #000));
+        color: #fff;
+    }
+
+    .cover__theme {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.85;
+    }
+
+    .cover__title {
+        font-family: var(--font-display);
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 1.15;
+    }
+
+    .cover__ages {
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+</style>

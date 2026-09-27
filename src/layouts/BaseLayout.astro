@@ -1,0 +1,155 @@
+---
+import '@/styles/global.css';
+import { CATEGORIES, SITE } from '@/site.config';
+
+interface Props {
+    title: string;
+    description: string;
+    ogType?: 'website' | 'article';
+    publishedAt?: Date;
+    noindex?: boolean;
+}
+
+const { title, description, ogType = 'website', publishedAt, noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, SITE.url).href;
+const fullTitle = Astro.url.pathname === '/' ? `${SITE.name} — ${SITE.tagline}` : `${title} | ${SITE.name}`;
+const isAdsOn = Object.values(SITE.yandexRtb).some(Boolean);
+const rtbBlocks = JSON.stringify(SITE.yandexRtb);
+const inContentAdEvery = SITE.inContentAdEvery;
+---
+
+<!doctype html>
+<html lang="ru" class:list={{ 'ads-on': isAdsOn }}>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{fullTitle}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonical} />
+        {noindex && <meta name="robots" content="noindex" />}
+        <meta property="og:type" content={ogType} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:site_name" content={SITE.name} />
+        <meta property="og:locale" content={SITE.locale} />
+        {publishedAt && <meta property="article:published_time" content={publishedAt.toISOString()} />}
+        <link rel="sitemap" href="/sitemap-index.xml" />
+        {
+            isAdsOn && (
+                <>
+                    <script is:inline>window.yaContextCb = window.yaContextCb || [];</script>
+                    <script is:inline src="https://yandex.ru/ads/system/context.js" async />
+                </>
+            )
+        }
+    </head>
+    <body>
+        <header class="header">
+            <div class="container header__inner">
+                <a class="header__logo" href="/">{SITE.name}</a>
+                <nav class="header__nav">
+                    {Object.entries(CATEGORIES).map(([slug, category]) => <a href={`/${slug}/`}>{category.title}</a>)}
+                    <a href="/magazin/">Магазин</a>
+                    <a href="/besplatno/">Бесплатно</a>
+                </nav>
+            </div>
+        </header>
+        <main class="container main">
+            <slot />
+        </main>
+        <footer class="footer">
+            <div class="container footer__inner">
+                <span>© {new Date().getFullYear()} {SITE.name}</span>
+                <a href="/o-proekte/">О проекте</a>
+                <a href="/privacy/">Конфиденциальность</a>
+                <a href="/oferta/">Оферта</a>
+            </div>
+        </footer>
+        {
+            isAdsOn && (
+                <script is:inline define:vars={{ rtbBlocks, inContentAdEvery }}>
+                    const blocks = JSON.parse(rtbBlocks);
+                    if (blocks.inContent) {
+                        document.querySelectorAll('.prose > h2').forEach((heading, index) => {
+                            if (index > 0 && index % inContentAdEvery === 0) {
+                                const slot = document.createElement('div');
+                                slot.className = 'ad-slot';
+                                slot.dataset.adSlot = 'inContent';
+                                heading.before(slot);
+                            }
+                        });
+                    }
+                    document.querySelectorAll('.ad-slot[data-ad-slot]').forEach((node, index) => {
+                        const blockId = blocks[node.dataset.adSlot];
+                        if (!blockId) {
+                            node.remove();
+                            return;
+                        }
+                        node.id = `ad-${index}`;
+                        window.yaContextCb.push(() => {
+                            window.Ya.Context.AdvManager.render({ blockId, renderTo: node.id, pageNumber: index + 1 });
+                        });
+                    });
+                </script>
+            )
+        }
+    </body>
+</html>
+
+<style>
+    .header {
+        padding: 16px 0;
+        border-bottom: 1px solid var(--color-border);
+        background: var(--color-surface);
+    }
+
+    .header__inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .header__logo {
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--color-accent);
+        text-decoration: none;
+    }
+
+    .header__nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .header__nav a {
+        color: var(--color-text);
+        text-decoration: none;
+    }
+
+    .main {
+        padding-top: 32px;
+        padding-bottom: 64px;
+    }
+
+    .footer {
+        padding: 24px 0;
+        border-top: 1px solid var(--color-border);
+        font-size: 0.85rem;
+    }
+
+    .footer__inner {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        color: var(--color-muted);
+    }
+
+    .footer__inner a {
+        color: var(--color-muted);
+    }
+</style>

@@ -1,0 +1,15 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE } from '@/site.config';
+---
+
+<BaseLayout title="О проекте" description={`${SITE.name} — ${SITE.tagline}`}>
+    <div class="stack content prose">
+        <h1>О проекте</h1>
+        <p>
+            {SITE.name} — готовые сценарии для детского праздника дома. Мы придумываем квесты с поиском подарка, конкурсы
+            и игры для детей от 3 до 13 лет, которые можно распечатать и провести без аниматора и долгой подготовки.
+        </p>
+        <p>Каждое задание проверено на возраст: загадки по силам, правила понятны, реквизит найдётся дома.</p>
+    </div>
+</BaseLayout>

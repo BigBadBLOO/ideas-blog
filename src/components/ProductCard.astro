@@ -1,0 +1,50 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import ProductCover from '@/components/ProductCover.astro';
+
+interface Props {
+    product: CollectionEntry<'products'>;
+}
+
+const { product } = Astro.props;
+const { title, description, theme, ages, isFree, price, coverColor } = product.data;
+---
+
+<a class="product-card" href={`/magazin/${product.id}/`}>
+    <ProductCover title={title} theme={theme} ages={ages} color={coverColor} />
+    <div class="product-card__body">
+        <span class="product-card__title">{title}</span>
+        <span class="product-card__description">{description}</span>
+        <span class="product-card__price">{isFree ? 'Бесплатно' : `${price} ₽`}</span>
+    </div>
+</a>
+
+<style>
+    .product-card {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .product-card__body {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .product-card__title {
+        font-weight: 700;
+    }
+
+    .product-card__description {
+        color: var(--color-muted);
+        font-size: 0.9rem;
+    }
+
+    .product-card__price {
+        color: var(--color-accent-dark);
+        font-weight: 700;
+    }
+</style>

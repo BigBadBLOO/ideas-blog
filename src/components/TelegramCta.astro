@@ -1,0 +1,49 @@
+---
+import { SITE } from '@/site.config';
+
+interface Props {
+    title?: string;
+    text?: string;
+}
+
+const {
+    title = 'Бесплатный квест в подарок',
+    text = 'Подпишитесь на наш Telegram-канал — пришлём готовый квест для печати и новые идеи к каждому празднику.',
+} = Astro.props;
+---
+
+<aside class="telegram-cta">
+    <p class="telegram-cta__title">{title}</p>
+    <p class="telegram-cta__text">{text}</p>
+    <a class="telegram-cta__button" href={SITE.telegramUrl} target="_blank" rel="noopener">Забрать в Telegram</a>
+</aside>
+
+<style>
+    .telegram-cta {
+        padding: 24px;
+        border-radius: var(--radius);
+        background: #e8f6fd;
+        border: 1px solid #bfe6f8;
+    }
+
+    .telegram-cta__title {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+
+    .telegram-cta__text {
+        margin: 8px 0 16px;
+    }
+
+    .telegram-cta__button {
+        display: inline-block;
+        padding: 12px 24px;
+        border-radius: 999px;
+        background: var(--color-telegram);
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+    }
+</style>

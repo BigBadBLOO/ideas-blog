@@ -1,0 +1,34 @@
+---
+import ArticleCard from '@/components/ArticleCard.astro';
+import TelegramCta from '@/components/TelegramCta.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getListedArticles } from '@/lib/content';
+import { CATEGORIES, type CategorySlug } from '@/site.config';
+
+export function getStaticPaths() {
+    return Object.keys(CATEGORIES).map((category) => ({ params: { category } }));
+}
+
+const category = Astro.params.category as CategorySlug;
+const { title, description } = CATEGORIES[category];
+const articles = (await getListedArticles()).filter((article) => article.data.category === category);
+---
+
+<BaseLayout title={title} description={description}>
+    <div class="stack">
+        <h1>{title}</h1>
+        <p class="muted content">{description}</p>
+        {
+            articles.length > 0 ? (
+                <div class="grid">
+                    {articles.map((article) => (
+                        <ArticleCard article={article} />
+                    ))}
+                </div>
+            ) : (
+                <p>Скоро здесь появятся новые идеи.</p>
+            )
+        }
+        <TelegramCta />
+    </div>
+</BaseLayout>

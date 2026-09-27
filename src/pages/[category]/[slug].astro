@@ -1,0 +1,99 @@
+---
+import { getEntries, render } from 'astro:content';
+import AdSlot from '@/components/AdSlot.astro';
+import ArticleCard from '@/components/ArticleCard.astro';
+import ProductCard from '@/components/ProductCard.astro';
+import TelegramCta from '@/components/TelegramCta.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getBuildableArticles, getListedArticles } from '@/lib/content';
+import { CATEGORIES } from '@/site.config';
+
+export async function getStaticPaths() {
+    const articles = await getBuildableArticles();
+
+    return articles.map((article) => ({
+        params: { category: article.data.category, slug: article.id },
+        props: { article },
+    }));
+}
+
+const { article } = Astro.props;
+const { title, description, category, publishedAt, updatedAt } = article.data;
+const { Content } = await render(article);
+const products = (await getEntries(article.data.products)).filter((product) => !product.data.isDraft);
+const related = (await getListedArticles())
+    .filter((item) => item.data.category === category && item.id !== article.id)
+    .slice(0, 3);
+const dateFormatter = new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<BaseLayout title={title} description={description} ogType="article" publishedAt={publishedAt}>
+    <article class="stack content">
+        <header class="stack article-header">
+            <a class="article-header__category" href={`/${category}/`}>{CATEGORIES[category].title}</a>
+            <h1>{title}</h1>
+            <p class="muted">
+                {dateFormatter.format(updatedAt ?? publishedAt)}
+            </p>
+        </header>
+
+        <AdSlot slot="top" />
+
+        <div class="prose">
+            <Content />
+        </div>
+
+        {
+            products.length > 0 && (
+                <section class="stack">
+                    <h2>Готовые квесты для печати</h2>
+                    <div class="grid">
+                        {products.map((product) => (
+                            <ProductCard product={product} />
+                        ))}
+                    </div>
+                </section>
+            )
+        }
+
+        <TelegramCta />
+
+        <AdSlot slot="bottom" />
+
+        {
+            related.length > 0 && (
+                <section class="stack">
+                    <h2>Ещё идеи</h2>
+                    <div class="grid">
+                        {related.map((item) => (
+                            <ArticleCard article={item} />
+                        ))}
+                    </div>
+                </section>
+            )
+        }
+    </article>
+</BaseLayout>
+
+<style>
+    .article-header {
+        gap: 8px;
+    }
+
+    .article-header h1 {
+        margin: 0;
+        font-size: 2.2rem;
+    }
+
+    .article-header p {
+        margin: 0;
+    }
+
+    .article-header__category {
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+</style>

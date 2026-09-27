@@ -1,0 +1,22 @@
+{
+  "name": "ideas-blog",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "cms": "npx decap-server",
+    "wordstat": "node --use-system-ca --env-file=.env scripts/wordstat.mjs",
+    "serp": "node --use-system-ca --env-file=.env scripts/serp.mjs",
+    "quests": "node scripts/quest-pdf.mjs",
+    "pins": "node scripts/pins.mjs",
+    "pinterest": "node --use-system-ca --env-file=.env scripts/pinterest.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.3.5"
+  },
+  "packageManager": "pnpm@10.28.0"
+}

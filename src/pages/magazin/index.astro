@@ -1,0 +1,28 @@
+---
+import ProductCard from '@/components/ProductCard.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getListedProducts } from '@/lib/content';
+
+const products = (await getListedProducts()).filter((product) => !product.data.isFree);
+---
+
+<BaseLayout title="Готовые квесты для печати" description="Тематические квесты для детей дома: скачайте PDF, распечатайте и проведите праздник.">
+    <div class="stack">
+        <h1>Готовые квесты для печати</h1>
+        <p class="muted content">
+            Каждый квест — PDF с сюжетом, заданиями, подсказками для взрослого и финальным кладом. Покупаете, скачиваете,
+            печатаете на обычном принтере.
+        </p>
+        {
+            products.length > 0 ? (
+                <div class="grid">
+                    {products.map((product) => (
+                        <ProductCard product={product} />
+                    ))}
+                </div>
+            ) : (
+                <p>Первые квесты уже готовятся. Подпишитесь на Telegram, чтобы не пропустить.</p>
+            )
+        }
+    </div>
+</BaseLayout>

@@ -1,0 +1,91 @@
+# Локально: `pnpm cms` в одном терминале, `pnpm dev` в другом → http://localhost:4321/admin/
+# Для продакшена backend заменим на github после выбора хостинга.
+local_backend: true
+backend:
+  name: git-gateway
+  branch: main
+
+locale: ru
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: articles
+    label: Статьи
+    label_singular: Статья
+    folder: src/content/articles
+    create: true
+    slug: '{{slug}}'
+    summary: '{{title}} — {{status}}'
+    sortable_fields: [publishedAt, title, status]
+    fields:
+      - { name: title, label: Заголовок, widget: string }
+      - { name: description, label: Описание (meta и анонс), widget: text }
+      - { name: keyword, label: Главный ключ, widget: string }
+      - name: category
+        label: Раздел
+        widget: select
+        options:
+          - { label: Квесты, value: kvesty }
+          - { label: Конкурсы и игры, value: konkursy-i-igry }
+          - { label: Праздники, value: prazdniki }
+      - name: ages
+        label: Возраст
+        widget: select
+        multiple: true
+        required: false
+        options: ['3-4', '5-7', '8-10', '11-13', 'взрослые']
+      - name: status
+        label: Статус
+        widget: select
+        default: draft
+        options:
+          - { label: Черновик, value: draft }
+          - { label: Опубликована, value: published }
+          - { label: Вечнозелёная / сезонная, value: evergreen }
+          - { label: Архив (URL живой, в списках нет), value: archived }
+      - name: season
+        label: Сезон (MM-DD)
+        widget: object
+        required: false
+        fields:
+          - { name: promoteFrom, label: Продвигать с, widget: string }
+          - { name: peak, label: Пик, widget: string }
+      - name: products
+        label: Связанные квесты
+        widget: relation
+        collection: products
+        search_fields: [title]
+        value_field: '{{slug}}'
+        display_fields: [title]
+        multiple: true
+        required: false
+      - { name: pinTitles, label: Заголовки пинов, widget: list, required: false }
+      - { name: publishedAt, label: Дата публикации, widget: datetime, format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false }
+      - { name: updatedAt, label: Дата обновления, widget: datetime, format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false, required: false }
+      - { name: body, label: Текст, widget: markdown }
+
+  - name: products
+    label: Квесты (товары)
+    label_singular: Квест
+    folder: src/content/products
+    create: true
+    slug: '{{slug}}'
+    summary: '{{title}} — {{price}} ₽'
+    fields:
+      - { name: title, label: Название, widget: string }
+      - { name: description, label: Короткое описание, widget: text }
+      - { name: theme, label: Тема, widget: string }
+      - name: ages
+        label: Возраст
+        widget: select
+        multiple: true
+        options: ['3-4', '5-7', '8-10', '11-13', 'взрослые']
+      - { name: isFree, label: Бесплатный, widget: boolean, default: false }
+      - { name: price, label: Цена ₽, widget: number, value_type: int, required: false }
+      - { name: buyUrl, label: Ссылка на оплату, widget: string, required: false }
+      - { name: telegramUrl, label: Ссылка в Telegram (для бесплатных), widget: string, required: false }
+      - { name: pages, label: Страниц, widget: number, value_type: int, required: false }
+      - { name: coverColor, label: Цвет обложки, widget: color, default: '#ff8a3d' }
+      - { name: isDraft, label: Черновик (скрыт с сайта), widget: boolean, default: true }
+      - { name: body, label: Описание, widget: markdown }

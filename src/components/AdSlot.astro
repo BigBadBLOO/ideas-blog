@@ -1,0 +1,11 @@
+---
+import { SITE } from '@/site.config';
+
+interface Props {
+    slot: keyof typeof SITE.yandexRtb;
+}
+
+const { slot } = Astro.props;
+---
+
+{SITE.yandexRtb[slot] && <div class="ad-slot" data-ad-slot={slot} />}
