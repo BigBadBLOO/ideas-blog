@@ -12,7 +12,8 @@
     "serp": "node --use-system-ca --env-file=.env scripts/serp.mjs",
     "quests": "node scripts/quest-pdf.mjs",
     "pins": "node scripts/pins.mjs",
-    "pinterest": "node --use-system-ca --env-file=.env scripts/pinterest.mjs"
+    "pinterest": "node --use-system-ca --env-file=.env scripts/pinterest.mjs",
+    "telegram": "node --use-system-ca --env-file=.env scripts/telegram.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
