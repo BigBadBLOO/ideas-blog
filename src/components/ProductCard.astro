@@ -1,13 +1,15 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import ProductCover from '@/components/ProductCover.astro';
+import { isProductFree } from '@/lib/content';
 
 interface Props {
     product: CollectionEntry<'products'>;
 }
 
 const { product } = Astro.props;
-const { title, description, theme, ages, isFree, price, coverColor } = product.data;
+const { title, description, theme, ages, price, coverColor } = product.data;
+const isFree = isProductFree(product);
 ---
 
 <a class="product-card" href={`/magazin/${product.id}/`}>
@@ -15,7 +17,7 @@ const { title, description, theme, ages, isFree, price, coverColor } = product.d
     <div class="product-card__body">
         <span class="product-card__title">{title}</span>
         <span class="product-card__description">{description}</span>
-        <span class="product-card__price">{isFree ? 'Бесплатно' : `${price} ₽`}</span>
+        <span class="product-card__price">{isFree ? 'Бесплатно в Telegram' : `${price} ₽`}</span>
     </div>
 </a>
 

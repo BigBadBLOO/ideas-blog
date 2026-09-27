@@ -1,4 +1,5 @@
 import { getCollection } from 'astro:content';
+import { SITE } from '@/site.config';
 
 const LISTED_STATUSES = new Set(['published', 'evergreen']);
 
@@ -12,3 +13,5 @@ export const getListedArticles = async () =>
     (await getCollection('articles', ({ data }) => LISTED_STATUSES.has(data.status))).sort(byDateDesc);
 
 export const getListedProducts = () => getCollection('products', ({ data }) => !data.isDraft);
+
+export const isProductFree = (product: { data: { isFree: boolean } }) => !SITE.isSalesEnabled || product.data.isFree;

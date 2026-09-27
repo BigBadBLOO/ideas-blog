@@ -3,7 +3,7 @@ import { render } from 'astro:content';
 import ProductCover from '@/components/ProductCover.astro';
 import TelegramCta from '@/components/TelegramCta.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { getListedProducts } from '@/lib/content';
+import { getListedProducts, isProductFree } from '@/lib/content';
 import { formatAges } from '@/lib/format';
 import { SITE } from '@/site.config';
 
@@ -14,7 +14,8 @@ export async function getStaticPaths() {
 }
 
 const { product } = Astro.props;
-const { title, description, theme, ages, isFree, price, buyUrl, telegramUrl, pages, coverColor, previews } = product.data;
+const { title, description, theme, ages, price, buyUrl, telegramUrl, pages, coverColor, previews } = product.data;
+const isFree = isProductFree(product);
 const { Content } = await render(product);
 ---
 

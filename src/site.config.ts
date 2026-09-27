@@ -19,6 +19,8 @@ export const SITE = {
         email: null as string | null,
     },
     inContentAdEvery: 4,
+    // Продажи выключены: все квесты выдаются бесплатно через Telegram-канал.
+    isSalesEnabled: false,
 } as const;
 
 export const CATEGORIES = {

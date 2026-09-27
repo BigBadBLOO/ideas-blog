@@ -50,8 +50,7 @@ const inContentAdEvery = SITE.inContentAdEvery;
                 <a class="header__logo" href="/">{SITE.name}</a>
                 <nav class="header__nav">
                     {Object.entries(CATEGORIES).map(([slug, category]) => <a href={`/${slug}/`}>{category.title}</a>)}
-                    <a href="/magazin/">Магазин</a>
-                    <a href="/besplatno/">Бесплатно</a>
+                    <a href="/magazin/">Квесты для печати</a>
                 </nav>
             </div>
         </header>
@@ -63,7 +62,7 @@ const inContentAdEvery = SITE.inContentAdEvery;
                 <span>© {new Date().getFullYear()} {SITE.name}</span>
                 <a href="/o-proekte/">О проекте</a>
                 <a href="/privacy/">Конфиденциальность</a>
-                <a href="/oferta/">Оферта</a>
+                {SITE.isSalesEnabled && <a href="/oferta/">Оферта</a>}
             </div>
         </footer>
         {
