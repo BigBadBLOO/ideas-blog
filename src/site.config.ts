@@ -11,11 +11,12 @@ export const SITE = {
         bottom: null as string | null,
     },
     yandexMetrikaId: null as string | null,
-    // Данные самозанятого для оферты и политики. Пока null — юридические страницы закрыты от индексации.
+    // Продавец для оферты и политики. Пока не заполнен ОГРНИП — юридические страницы закрыты от индексации.
     owner: {
-        name: null as string | null,
-        inn: null as string | null,
-        email: null as string | null,
+        name: 'Агапов Ефим Вячеславович' as string | null,
+        inn: '540411125848' as string | null,
+        ogrnip: null as string | null,
+        email: 'agapovefim@gmail.com' as string | null,
     },
     inContentAdEvery: 4,
 } as const;
