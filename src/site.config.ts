@@ -4,6 +4,7 @@ export const SITE = {
     url: 'https://kvestovichok.ru',
     locale: 'ru_RU',
     telegramUrl: 'https://t.me/kvestovichok',
+    contactEmail: 'kvestovichok@yandex.ru',
     // РСЯ: ID блоков из partner.yandex.ru. Пока null — рекламные слоты не рендерятся.
     yandexRtb: {
         top: null as string | null,
