@@ -11,7 +11,7 @@ export const SITE = {
         inContent: null as string | null,
         bottom: null as string | null,
     },
-    yandexMetrikaId: null as string | null,
+    yandexMetrikaId: '113122036' as string | null,
     // Продавец для оферты и политики. Пока не заполнен ОГРНИП — юридические страницы закрыты от индексации.
     owner: {
         name: null as string | null,
