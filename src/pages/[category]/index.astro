@@ -1,8 +1,10 @@
 ---
 import ArticleCard from '@/components/ArticleCard.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import TelegramCta from '@/components/TelegramCta.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getListedArticles } from '@/lib/content';
+import { getBreadcrumbJsonLd } from '@/lib/seo';
 import { CATEGORIES, type CategorySlug } from '@/site.config';
 
 export function getStaticPaths() {
@@ -12,10 +14,12 @@ export function getStaticPaths() {
 const category = Astro.params.category as CategorySlug;
 const { title, description } = CATEGORIES[category];
 const articles = (await getListedArticles()).filter((article) => article.data.category === category);
+const jsonLd = [getBreadcrumbJsonLd([{ name: title, path: `/${category}/` }])];
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
     <div class="stack">
+        <Breadcrumbs items={[{ name: title }]} />
         <h1>{title}</h1>
         <p class="muted content">{description}</p>
         {

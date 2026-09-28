@@ -1,12 +1,14 @@
 ---
 import { getEntries, render } from 'astro:content';
 import AdSlot from '@/components/AdSlot.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import ArticleCard from '@/components/ArticleCard.astro';
 import ProductCard from '@/components/ProductCard.astro';
 import TelegramCta from '@/components/TelegramCta.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getBuildableArticles, getListedArticles } from '@/lib/content';
-import { CATEGORIES } from '@/site.config';
+import { getBreadcrumbJsonLd, PUBLISHER } from '@/lib/seo';
+import { CATEGORIES, SITE } from '@/site.config';
 
 export async function getStaticPaths() {
     const articles = await getBuildableArticles();
@@ -25,12 +27,32 @@ const related = (await getListedArticles())
     .filter((item) => item.data.category === category && item.id !== article.id)
     .slice(0, 3);
 const dateFormatter = new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' });
+const categoryPath = `/${category}/`;
+const image = `/pins/${article.id}/1.png`;
+const jsonLd = [
+    {
+        '@type': 'Article',
+        headline: title,
+        description,
+        image: new URL(image, SITE.url).href,
+        datePublished: publishedAt.toISOString(),
+        dateModified: (updatedAt ?? publishedAt).toISOString(),
+        inLanguage: 'ru',
+        mainEntityOfPage: new URL(`${categoryPath}${article.id}/`, SITE.url).href,
+        author: PUBLISHER,
+        publisher: PUBLISHER,
+    },
+    getBreadcrumbJsonLd([
+        { name: CATEGORIES[category].title, path: categoryPath },
+        { name: title, path: `${categoryPath}${article.id}/` },
+    ]),
+];
 ---
 
-<BaseLayout title={title} description={description} ogType="article" publishedAt={publishedAt}>
+<BaseLayout title={title} description={description} ogType="article" publishedAt={publishedAt} image={image} jsonLd={jsonLd}>
     <article class="stack content">
         <header class="stack article-header">
-            <a class="article-header__category" href={`/${category}/`}>{CATEGORIES[category].title}</a>
+            <Breadcrumbs items={[{ name: CATEGORIES[category].title, href: categoryPath }]} />
             <h1>{title}</h1>
             <p class="muted">
                 {dateFormatter.format(updatedAt ?? publishedAt)}
@@ -89,11 +111,4 @@ const dateFormatter = new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 
         margin: 0;
     }
 
-    .article-header__category {
-        font-size: 0.8rem;
-        font-weight: 700;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        text-decoration: none;
-    }
 </style>

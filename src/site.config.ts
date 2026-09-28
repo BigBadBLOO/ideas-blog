@@ -1,7 +1,7 @@
 export const SITE = {
     name: 'Квестовичок',
     tagline: 'Готовые квесты, конкурсы и игры для детского праздника дома',
-    url: 'https://kvestovichok.ru',
+    url: 'http://kvestovichok.ru',
     locale: 'ru_RU',
     telegramUrl: 'https://t.me/kvestovichok',
     contactEmail: 'kvestovichok@yandex.ru',

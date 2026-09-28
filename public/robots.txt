@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /admin/
 
-Sitemap: https://kvestovichok.ru/sitemap-index.xml
+Sitemap: http://kvestovichok.ru/sitemap-index.xml

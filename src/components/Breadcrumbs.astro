@@ -1,0 +1,33 @@
+---
+interface Props {
+    items: { name: string; href?: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="breadcrumbs" aria-label="Навигация">
+    <a href="/">Главная</a>
+    {
+        items.map((item) => (
+            <>
+                <span aria-hidden="true">/</span>
+                {item.href ? <a href={item.href}>{item.name}</a> : <span aria-current="page">{item.name}</span>}
+            </>
+        ))
+    }
+</nav>
+
+<style>
+    .breadcrumbs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        font-size: 0.8rem;
+        color: var(--color-muted);
+    }
+
+    .breadcrumbs a {
+        color: var(--color-muted);
+    }
+</style>

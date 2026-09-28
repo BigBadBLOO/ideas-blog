@@ -1,10 +1,12 @@
 ---
 import { render } from 'astro:content';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import ProductCover from '@/components/ProductCover.astro';
 import TelegramCta from '@/components/TelegramCta.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getListedProducts, isProductFree } from '@/lib/content';
 import { formatAges } from '@/lib/format';
+import { getBreadcrumbJsonLd } from '@/lib/seo';
 import { SITE } from '@/site.config';
 
 export async function getStaticPaths() {
@@ -17,9 +19,16 @@ const { product } = Astro.props;
 const { title, description, theme, ages, price, buyUrl, telegramUrl, pages, coverColor, previews } = product.data;
 const isFree = isProductFree(product);
 const { Content } = await render(product);
+const jsonLd = [
+    getBreadcrumbJsonLd([
+        { name: 'Квесты для печати', path: '/magazin/' },
+        { name: title, path: `/magazin/${product.id}/` },
+    ]),
+];
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} image={previews[0]} jsonLd={jsonLd}>
+    <div class="product__breadcrumbs"><Breadcrumbs items={[{ name: 'Квесты для печати', href: '/magazin/' }, { name: title }]} /></div>
     <div class="product">
         <ProductCover title={title} theme={theme} ages={ages} color={coverColor} />
         <div class="stack">
@@ -73,6 +82,10 @@ const { Content } = await render(product);
     .product__facts {
         margin: 0;
         padding-left: 20px;
+    }
+
+    .product__breadcrumbs {
+        padding-bottom: 24px;
     }
 
     .product__previews {

@@ -8,9 +8,22 @@ interface Props {
     ogType?: 'website' | 'article';
     publishedAt?: Date;
     noindex?: boolean;
+    image?: string;
+    jsonLd?: Record<string, unknown>[];
 }
 
-const { title, description, ogType = 'website', publishedAt, noindex = false } = Astro.props;
+const { title, description, ogType = 'website', publishedAt, noindex = false, image = '/icon-512.png', jsonLd = [] } = Astro.props;
+const imageUrl = new URL(image, SITE.url).href;
+const structuredData = [
+    {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: SITE.name,
+        url: SITE.url,
+        inLanguage: 'ru',
+    },
+    ...jsonLd.map((item) => ({ '@context': 'https://schema.org', ...item })),
+];
 const canonical = new URL(Astro.url.pathname, SITE.url).href;
 const fullTitle = Astro.url.pathname === '/' ? `${SITE.name} — ${SITE.tagline}` : `${title} | ${SITE.name}`;
 const isAdsOn = Object.values(SITE.yandexRtb).some(Boolean);
@@ -33,7 +46,10 @@ const inContentAdEvery = SITE.inContentAdEvery;
         <meta property="og:url" content={canonical} />
         <meta property="og:site_name" content={SITE.name} />
         <meta property="og:locale" content={SITE.locale} />
+        <meta property="og:image" content={imageUrl} />
+        <meta name="twitter:card" content="summary_large_image" />
         {publishedAt && <meta property="article:published_time" content={publishedAt.toISOString()} />}
+        <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
         <link rel="icon" href="/favicon.ico" sizes="48x48" />
         <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
         <link rel="icon" href="/icon-512.png" type="image/png" sizes="512x512" />
