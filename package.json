@@ -13,7 +13,8 @@
     "quests": "node scripts/quest-pdf.mjs",
     "pins": "node scripts/pins.mjs",
     "pinterest": "node --use-system-ca --env-file=.env scripts/pinterest.mjs",
-    "telegram": "node --use-system-ca --env-file=.env scripts/telegram.mjs"
+    "telegram": "node --use-system-ca --env-file=.env scripts/telegram.mjs",
+    "stats": "node --use-system-ca --env-file=.env scripts/yandex-stats.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
