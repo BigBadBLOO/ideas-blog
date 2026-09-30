@@ -7,7 +7,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 const QUEUE_PATH = 'pins/queue.json';
 const CSV_PATH = 'pins/pinterest-bulk.csv';
 const MEDIA_BASE = 'https://raw.githubusercontent.com/BigBadBLOO/ideas-blog/main/public';
-const LINK_ORIGIN = process.env.PINS_LINK_ORIGIN ?? 'http://kvestovichok.ru';
+const LINK_ORIGIN = process.env.PINS_LINK_ORIGIN ?? 'https://kvestovichok.ru';
 
 const days = Number(process.argv[2] ?? 28);
 const horizon = Date.now() + days * 86_400_000;
