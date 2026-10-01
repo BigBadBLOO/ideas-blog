@@ -57,7 +57,9 @@
     "id": "post-zagadka-dnya",
     "scheduledFor": "2026-10-01T19:00:00+03:00",
     "text": "<b>Загадка дня</b>\n\nНе дерево, а с листочками, не рубашка, а сшита, не человек, а рассказывает.\n\nЧто это и куда спрятать записку для квеста?\n\nОтвет: <tg-spoiler>книга — записку вкладываем между страниц любимой книги</tg-spoiler>",
-    "status": "pending"
+    "status": "published",
+    "messageId": 11,
+    "publishedAt": "2026-10-01T20:57:49.725Z"
   },
   {
     "id": "post-konkursy-bez-slez",
