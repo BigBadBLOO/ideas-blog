@@ -73,7 +73,9 @@
     "id": "post-shifr",
     "scheduledFor": "2026-10-05T19:00:00+03:00",
     "text": "<b>Шифр для юного агента</b>\n\nДетям 8–12 лет обычные загадки уже скучны. Попробуйте числовой шифр: А=1, Б=2, В=3…\n\n<code>17-16-5 17-16-5-21-26-12-16-11</code>\n\nКто расшифрует первым? Ответ: <tg-spoiler>ПОД ПОДУШКОЙ</tg-spoiler>\n\n12 заданий с шифрами для квеста 10–12 лет → https://kvestovichok.ru/kvesty/kvest-dlya-detej-10-12-let/",
-    "status": "pending"
+    "status": "published",
+    "messageId": 13,
+    "publishedAt": "2026-10-05T22:29:11.107Z"
   },
   {
     "id": "post-igry-doma",
