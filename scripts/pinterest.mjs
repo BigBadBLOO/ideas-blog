@@ -1,13 +1,16 @@
 // Usage:
 //   node --use-system-ca --env-file=.env scripts/pinterest.mjs boards        создать недостающие доски → pins/boards.json
 //   node --use-system-ca --env-file=.env scripts/pinterest.mjs publish [N]   опубликовать до N пинов, чьё время наступило (по умолчанию 1)
-// Env: PINTEREST_TOKEN — access token приложения Pinterest API v5 (scopes: boards:read, boards:write, pins:read, pins:write)
+//   PINTEREST_ENV=sandbox node … scripts/pinterest.mjs demo                   песочница: доска + один пин из очереди (очередь не меняется)
+// Env: PINTEREST_TOKEN — access token приложения Pinterest API v5 (scopes: boards:read, boards:write, pins:read, pins:write);
+//      PINTEREST_SANDBOX_TOKEN — токен песочницы
 
 import { readFile, writeFile } from 'node:fs/promises';
 
-const API = 'https://api.pinterest.com/v5';
+const IS_SANDBOX = process.env.PINTEREST_ENV === 'sandbox';
+const API = IS_SANDBOX ? 'https://api-sandbox.pinterest.com/v5' : 'https://api.pinterest.com/v5';
 const QUEUE_PATH = 'pins/queue.json';
-const BOARDS_PATH = 'pins/boards.json';
+const BOARDS_PATH = IS_SANDBOX ? 'pins/boards.sandbox.json' : 'pins/boards.json';
 
 const BOARD_DESCRIPTIONS = {
     'Квесты для детей дома': 'Готовые квесты для детей дома: поиск подарка, загадки, шифры и задания по возрастам. Сценарии для печати.',
@@ -16,10 +19,10 @@ const BOARD_DESCRIPTIONS = {
     'Новый год с детьми: игры и идеи': 'Новогодний квест, адвент-календарь с заданиями, конкурсы на Новый год для детей и семьи.',
 };
 
-const { PINTEREST_TOKEN } = process.env;
+const PINTEREST_TOKEN = IS_SANDBOX ? (process.env.PINTEREST_SANDBOX_TOKEN ?? process.env.PINTEREST_TOKEN) : process.env.PINTEREST_TOKEN;
 
 if (!PINTEREST_TOKEN) {
-    console.error('Set PINTEREST_TOKEN in .env');
+    console.error(`Set ${IS_SANDBOX ? 'PINTEREST_SANDBOX_TOKEN' : 'PINTEREST_TOKEN'} in .env`);
     process.exit(1);
 }
 
@@ -108,13 +111,41 @@ async function publishDue(limit) {
     console.log(`Опубликовано: ${due.filter((pin) => pin.status === 'published').length} из ${due.length} готовых`);
 }
 
+async function demo() {
+    const queue = await readJson(QUEUE_PATH, []);
+    const pin = queue.find((item) => item.status === 'pending');
+    const me = await callApi('/user_account');
+    console.log(`Аккаунт: ${me.username} (${API})`);
+    const board = await callApi('/boards', {
+        method: 'POST',
+        body: { name: `API test ${new Date().toISOString().slice(0, 16)}`, description: 'Sandbox demo board', privacy: 'PUBLIC' },
+    });
+    console.log(`✓ Доска создана: ${board.id} «${board.name}»`);
+    const created = await callApi('/pins', {
+        method: 'POST',
+        body: {
+            board_id: board.id,
+            title: pin.title,
+            description: pin.description,
+            link: pin.link,
+            alt_text: pin.altText,
+            media_source: { source_type: 'image_url', url: pin.imageUrl },
+        },
+    });
+    console.log(`✓ Пин создан: ${created.id} «${created.title}»`);
+    const fetched = await callApi(`/pins/${created.id}`);
+    console.log(`Проверка GET /pins/${created.id}: ${fetched.title} | ${fetched.link}`);
+}
+
 const [command, arg] = process.argv.slice(2);
 
 if (command === 'boards') {
     await syncBoards();
+} else if (command === 'demo') {
+    await demo();
 } else if (command === 'publish') {
     await publishDue(Number(arg ?? 1));
 } else {
-    console.error('Команда: boards | publish [N]');
+    console.error('Команда: boards | publish [N] | demo');
     process.exit(1);
 }

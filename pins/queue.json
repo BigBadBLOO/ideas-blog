@@ -9,9 +9,9 @@
     "link": "https://kvestovichok.ru/konkursy-i-igry/igry-na-den-rozhdeniya-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=igry-na-den-rozhdeniya-dlya-detej-1",
     "imageUrl": "https://kvestovichok.ru/pins/igry-na-den-rozhdeniya-dlya-detej/1.png",
     "imagePath": "public/pins/igry-na-den-rozhdeniya-dlya-detej/1.png",
-    "status": "csv",
-    "scheduledFor": "2026-09-28T09:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
+    "status": "pending",
+    "scheduledFor": "2026-10-15T08:54:41.887Z",
+    "lastError": "POST /pins 401: {\"code\":3,\"message\":\"Your token does not have sufficient permissions to perform this operation. Please ensure your token is authorized with the correct set of scopes. Missing: ['boards:write', 'pins:write']\"}"
   },
   {
     "id": "konkursy-na-den-rozhdeniya-dlya-detej-1",
@@ -23,9 +23,8 @@
     "link": "https://kvestovichok.ru/konkursy-i-igry/konkursy-na-den-rozhdeniya-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=konkursy-na-den-rozhdeniya-dlya-detej-1",
     "imageUrl": "https://kvestovichok.ru/pins/konkursy-na-den-rozhdeniya-dlya-detej/1.png",
     "imagePath": "public/pins/konkursy-na-den-rozhdeniya-dlya-detej/1.png",
-    "status": "csv",
-    "scheduledFor": "2026-09-28T14:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
+    "status": "pending",
+    "scheduledFor": "2026-10-16T14:00:00+03:00"
   },
   {
     "id": "kvest-dlya-detej-10-12-let-1",
@@ -37,9 +36,8 @@
     "link": "https://kvestovichok.ru/kvesty/kvest-dlya-detej-10-12-let/?utm_source=pinterest&utm_medium=pin&utm_content=kvest-dlya-detej-10-12-let-1",
     "imageUrl": "https://kvestovichok.ru/pins/kvest-dlya-detej-10-12-let/1.png",
     "imagePath": "public/pins/kvest-dlya-detej-10-12-let/1.png",
-    "status": "csv",
-    "scheduledFor": "2026-09-28T20:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
+    "status": "pending",
+    "scheduledFor": "2026-10-16T20:00:00+03:00"
   },
   {
     "id": "kvest-dlya-detej-na-den-rozhdeniya-doma-1",
@@ -51,9 +49,8 @@
     "link": "https://kvestovichok.ru/kvesty/kvest-dlya-detej-na-den-rozhdeniya-doma/?utm_source=pinterest&utm_medium=pin&utm_content=kvest-dlya-detej-na-den-rozhdeniya-doma-1",
     "imageUrl": "https://kvestovichok.ru/pins/kvest-dlya-detej-na-den-rozhdeniya-doma/1.png",
     "imagePath": "public/pins/kvest-dlya-detej-na-den-rozhdeniya-doma/1.png",
-    "status": "csv",
-    "scheduledFor": "2026-09-29T09:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
+    "status": "pending",
+    "scheduledFor": "2026-10-17T09:00:00+03:00"
   },
   {
     "id": "scenarij-dnya-rozhdeniya-rebenka-doma-1",
@@ -65,9 +62,8 @@
     "link": "https://kvestovichok.ru/prazdniki/scenarij-dnya-rozhdeniya-rebenka-doma/?utm_source=pinterest&utm_medium=pin&utm_content=scenarij-dnya-rozhdeniya-rebenka-doma-1",
     "imageUrl": "https://kvestovichok.ru/pins/scenarij-dnya-rozhdeniya-rebenka-doma/1.png",
     "imagePath": "public/pins/scenarij-dnya-rozhdeniya-rebenka-doma/1.png",
-    "status": "csv",
-    "scheduledFor": "2026-09-29T14:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
+    "status": "pending",
+    "scheduledFor": "2026-10-17T14:00:00+03:00"
   },
   {
     "id": "zadaniya-dlya-kvesta-1",
@@ -79,9 +75,8 @@
     "link": "https://kvestovichok.ru/kvesty/zadaniya-dlya-kvesta/?utm_source=pinterest&utm_medium=pin&utm_content=zadaniya-dlya-kvesta-1",
     "imageUrl": "https://kvestovichok.ru/pins/zadaniya-dlya-kvesta/1.png",
     "imagePath": "public/pins/zadaniya-dlya-kvesta/1.png",
-    "status": "csv",
-    "scheduledFor": "2026-09-29T20:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
+    "status": "pending",
+    "scheduledFor": "2026-10-17T20:00:00+03:00"
   },
   {
     "id": "igry-na-den-rozhdeniya-dlya-detej-2",
@@ -93,9 +88,8 @@
     "link": "https://kvestovichok.ru/konkursy-i-igry/igry-na-den-rozhdeniya-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=igry-na-den-rozhdeniya-dlya-detej-2",
     "imageUrl": "https://kvestovichok.ru/pins/igry-na-den-rozhdeniya-dlya-detej/2.png",
     "imagePath": "public/pins/igry-na-den-rozhdeniya-dlya-detej/2.png",
-    "status": "csv",
-    "scheduledFor": "2026-09-30T09:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
+    "status": "pending",
+    "scheduledFor": "2026-10-18T09:00:00+03:00"
   },
   {
     "id": "konkursy-na-den-rozhdeniya-dlya-detej-2",
@@ -107,9 +101,8 @@
     "link": "https://kvestovichok.ru/konkursy-i-igry/konkursy-na-den-rozhdeniya-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=konkursy-na-den-rozhdeniya-dlya-detej-2",
     "imageUrl": "https://kvestovichok.ru/pins/konkursy-na-den-rozhdeniya-dlya-detej/2.png",
     "imagePath": "public/pins/konkursy-na-den-rozhdeniya-dlya-detej/2.png",
-    "status": "csv",
-    "scheduledFor": "2026-09-30T14:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
+    "status": "pending",
+    "scheduledFor": "2026-10-18T14:00:00+03:00"
   },
   {
     "id": "kvest-dlya-detej-10-12-let-2",
@@ -121,9 +114,8 @@
     "link": "https://kvestovichok.ru/kvesty/kvest-dlya-detej-10-12-let/?utm_source=pinterest&utm_medium=pin&utm_content=kvest-dlya-detej-10-12-let-2",
     "imageUrl": "https://kvestovichok.ru/pins/kvest-dlya-detej-10-12-let/2.png",
     "imagePath": "public/pins/kvest-dlya-detej-10-12-let/2.png",
-    "status": "csv",
-    "scheduledFor": "2026-09-30T20:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
+    "status": "pending",
+    "scheduledFor": "2026-10-18T20:00:00+03:00"
   },
   {
     "id": "kvest-dlya-detej-na-den-rozhdeniya-doma-2",
@@ -135,9 +127,8 @@
     "link": "https://kvestovichok.ru/kvesty/kvest-dlya-detej-na-den-rozhdeniya-doma/?utm_source=pinterest&utm_medium=pin&utm_content=kvest-dlya-detej-na-den-rozhdeniya-doma-2",
     "imageUrl": "https://kvestovichok.ru/pins/kvest-dlya-detej-na-den-rozhdeniya-doma/2.png",
     "imagePath": "public/pins/kvest-dlya-detej-na-den-rozhdeniya-doma/2.png",
-    "status": "csv",
-    "scheduledFor": "2026-10-01T09:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
+    "status": "pending",
+    "scheduledFor": "2026-10-19T09:00:00+03:00"
   },
   {
     "id": "scenarij-dnya-rozhdeniya-rebenka-doma-2",
@@ -149,9 +140,8 @@
     "link": "https://kvestovichok.ru/prazdniki/scenarij-dnya-rozhdeniya-rebenka-doma/?utm_source=pinterest&utm_medium=pin&utm_content=scenarij-dnya-rozhdeniya-rebenka-doma-2",
     "imageUrl": "https://kvestovichok.ru/pins/scenarij-dnya-rozhdeniya-rebenka-doma/2.png",
     "imagePath": "public/pins/scenarij-dnya-rozhdeniya-rebenka-doma/2.png",
-    "status": "csv",
-    "scheduledFor": "2026-10-01T14:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
+    "status": "pending",
+    "scheduledFor": "2026-10-19T14:00:00+03:00"
   },
   {
     "id": "zadaniya-dlya-kvesta-2",
@@ -163,163 +153,8 @@
     "link": "https://kvestovichok.ru/kvesty/zadaniya-dlya-kvesta/?utm_source=pinterest&utm_medium=pin&utm_content=zadaniya-dlya-kvesta-2",
     "imageUrl": "https://kvestovichok.ru/pins/zadaniya-dlya-kvesta/2.png",
     "imagePath": "public/pins/zadaniya-dlya-kvesta/2.png",
-    "status": "csv",
-    "scheduledFor": "2026-10-01T20:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
-  },
-  {
-    "id": "igry-na-den-rozhdeniya-dlya-detej-3",
-    "article": "igry-na-den-rozhdeniya-dlya-detej",
-    "title": "Игры для детей разного возраста",
-    "description": "Игры на день рождения для детей дома: 30 игр для квартиры — подвижные, спокойные, командные, для знакомства и для детей разного возраста. Правила и реквизит. Готовые квесты и задания для печати — на kvestovichok.ru.",
-    "altText": "Игры для детей разного возраста",
-    "board": "Конкурсы и игры на день рождения",
-    "link": "https://kvestovichok.ru/konkursy-i-igry/igry-na-den-rozhdeniya-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=igry-na-den-rozhdeniya-dlya-detej-3",
-    "imageUrl": "https://kvestovichok.ru/pins/igry-na-den-rozhdeniya-dlya-detej/3.png",
-    "imagePath": "public/pins/igry-na-den-rozhdeniya-dlya-detej/3.png",
-    "status": "csv",
-    "scheduledFor": "2026-10-02T09:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
-  },
-  {
-    "id": "konkursy-na-den-rozhdeniya-dlya-detej-3",
-    "article": "konkursy-na-den-rozhdeniya-dlya-detej",
-    "title": "4 конкурса для детей за столом",
-    "description": "Конкурсы на день рождения для детей дома: 25 заданий для 3–4, 5–7, 8–10 и 11–13 лет плюс застольные. Правила, реквизит из квартиры и идеи призов. Готовые квесты и задания для печати — на kvestovichok.ru.",
-    "altText": "4 конкурса для детей за столом",
-    "board": "Конкурсы и игры на день рождения",
-    "link": "https://kvestovichok.ru/konkursy-i-igry/konkursy-na-den-rozhdeniya-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=konkursy-na-den-rozhdeniya-dlya-detej-3",
-    "imageUrl": "https://kvestovichok.ru/pins/konkursy-na-den-rozhdeniya-dlya-detej/3.png",
-    "imagePath": "public/pins/konkursy-na-den-rozhdeniya-dlya-detej/3.png",
-    "status": "csv",
-    "scheduledFor": "2026-10-02T14:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
-  },
-  {
-    "id": "kvest-dlya-detej-10-12-let-3",
-    "article": "kvest-dlya-detej-10-12-let",
-    "title": "Квест на 10–12 лет с ответами",
-    "description": "Готовый квест для детей 10 лет, 11 и 12 лет дома: сюжет про агентов, 12 заданий с шифрами и логикой, ответы, места для записок и командный вариант. Готовые квесты и задания для печати — на kvestovichok.ru.",
-    "altText": "Квест на 10–12 лет с ответами",
-    "board": "Квесты для детей дома",
-    "link": "https://kvestovichok.ru/kvesty/kvest-dlya-detej-10-12-let/?utm_source=pinterest&utm_medium=pin&utm_content=kvest-dlya-detej-10-12-let-3",
-    "imageUrl": "https://kvestovichok.ru/pins/kvest-dlya-detej-10-12-let/3.png",
-    "imagePath": "public/pins/kvest-dlya-detej-10-12-let/3.png",
-    "status": "csv",
-    "scheduledFor": "2026-10-02T20:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
-  },
-  {
-    "id": "kvest-dlya-detej-na-den-rozhdeniya-doma-3",
-    "article": "kvest-dlya-detej-na-den-rozhdeniya-doma",
-    "title": "15 загадок для квеста с ответами",
-    "description": "Готовый домашний квест на день рождения: 15 загадок с ответами и местами, где прятать записки, испытания между этапами и советы по возрасту от 5 до 10 лет. Готовые квесты и задания для печати — на kvestovichok.ru.",
-    "altText": "15 загадок для квеста с ответами",
-    "board": "Квесты для детей дома",
-    "link": "https://kvestovichok.ru/kvesty/kvest-dlya-detej-na-den-rozhdeniya-doma/?utm_source=pinterest&utm_medium=pin&utm_content=kvest-dlya-detej-na-den-rozhdeniya-doma-3",
-    "imageUrl": "https://kvestovichok.ru/pins/kvest-dlya-detej-na-den-rozhdeniya-doma/3.png",
-    "imagePath": "public/pins/kvest-dlya-detej-na-den-rozhdeniya-doma/3.png",
-    "status": "csv",
-    "scheduledFor": "2026-10-03T09:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
-  },
-  {
-    "id": "scenarij-dnya-rozhdeniya-rebenka-doma-3",
-    "article": "scenarij-dnya-rozhdeniya-rebenka-doma",
-    "title": "Программа ДР для детей 5–10 лет: 12 игр",
-    "description": "Сценарий дня рождения ребёнка дома на 2 часа: 12 игр по порядку, тексты для ведущего, варианты для 5–7 и 8–10 лет, чек-лист подготовки и советы по бюджету. Готовые квесты и задания для печати — на kvestovichok.ru.",
-    "altText": "Программа ДР для детей 5–10 лет: 12 игр",
-    "board": "Детский праздник дома: сценарии",
-    "link": "https://kvestovichok.ru/prazdniki/scenarij-dnya-rozhdeniya-rebenka-doma/?utm_source=pinterest&utm_medium=pin&utm_content=scenarij-dnya-rozhdeniya-rebenka-doma-3",
-    "imageUrl": "https://kvestovichok.ru/pins/scenarij-dnya-rozhdeniya-rebenka-doma/3.png",
-    "imagePath": "public/pins/scenarij-dnya-rozhdeniya-rebenka-doma/3.png",
-    "status": "csv",
-    "scheduledFor": "2026-10-03T14:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
-  },
-  {
-    "id": "zadaniya-dlya-kvesta-3",
-    "article": "zadaniya-dlya-kvesta",
-    "title": "Задания для квеста: 4 идеи для малышей",
-    "description": "Задания для квеста для детей дома: 30 идей — загадки, шифры, головоломки, испытания и задания для малышей без чтения. С примерами, ответами и реквизитом. Готовые квесты и задания для печати — на kvestovichok.ru.",
-    "altText": "Задания для квеста: 4 идеи для малышей",
-    "board": "Квесты для детей дома",
-    "link": "https://kvestovichok.ru/kvesty/zadaniya-dlya-kvesta/?utm_source=pinterest&utm_medium=pin&utm_content=zadaniya-dlya-kvesta-3",
-    "imageUrl": "https://kvestovichok.ru/pins/zadaniya-dlya-kvesta/3.png",
-    "imagePath": "public/pins/zadaniya-dlya-kvesta/3.png",
-    "status": "csv",
-    "scheduledFor": "2026-10-03T20:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
-  },
-  {
-    "id": "igry-na-den-rozhdeniya-dlya-detej-4",
-    "article": "igry-na-den-rozhdeniya-dlya-detej",
-    "title": "4 игры-знакомства на праздник",
-    "description": "Игры на день рождения для детей дома: 30 игр для квартиры — подвижные, спокойные, командные, для знакомства и для детей разного возраста. Правила и реквизит. Готовые квесты и задания для печати — на kvestovichok.ru.",
-    "altText": "4 игры-знакомства на праздник",
-    "board": "Конкурсы и игры на день рождения",
-    "link": "https://kvestovichok.ru/konkursy-i-igry/igry-na-den-rozhdeniya-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=igry-na-den-rozhdeniya-dlya-detej-4",
-    "imageUrl": "https://kvestovichok.ru/pins/igry-na-den-rozhdeniya-dlya-detej/4.png",
-    "imagePath": "public/pins/igry-na-den-rozhdeniya-dlya-detej/4.png",
-    "status": "csv",
-    "scheduledFor": "2026-10-04T09:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
-  },
-  {
-    "id": "konkursy-na-den-rozhdeniya-dlya-detej-4",
-    "article": "konkursy-na-den-rozhdeniya-dlya-detej",
-    "title": "25 весёлых конкурсов без аниматора",
-    "description": "Конкурсы на день рождения для детей дома: 25 заданий для 3–4, 5–7, 8–10 и 11–13 лет плюс застольные. Правила, реквизит из квартиры и идеи призов. Готовые квесты и задания для печати — на kvestovichok.ru.",
-    "altText": "25 весёлых конкурсов без аниматора",
-    "board": "Конкурсы и игры на день рождения",
-    "link": "https://kvestovichok.ru/konkursy-i-igry/konkursy-na-den-rozhdeniya-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=konkursy-na-den-rozhdeniya-dlya-detej-4",
-    "imageUrl": "https://kvestovichok.ru/pins/konkursy-na-den-rozhdeniya-dlya-detej/4.png",
-    "imagePath": "public/pins/konkursy-na-den-rozhdeniya-dlya-detej/4.png",
-    "status": "csv",
-    "scheduledFor": "2026-10-04T14:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
-  },
-  {
-    "id": "kvest-dlya-detej-10-12-let-4",
-    "article": "kvest-dlya-detej-10-12-let",
-    "title": "Квест с шифрами: 12 этапов на 11–12 лет",
-    "description": "Готовый квест для детей 10 лет, 11 и 12 лет дома: сюжет про агентов, 12 заданий с шифрами и логикой, ответы, места для записок и командный вариант. Готовые квесты и задания для печати — на kvestovichok.ru.",
-    "altText": "Квест с шифрами: 12 этапов на 11–12 лет",
-    "board": "Квесты для детей дома",
-    "link": "https://kvestovichok.ru/kvesty/kvest-dlya-detej-10-12-let/?utm_source=pinterest&utm_medium=pin&utm_content=kvest-dlya-detej-10-12-let-4",
-    "imageUrl": "https://kvestovichok.ru/pins/kvest-dlya-detej-10-12-let/4.png",
-    "imagePath": "public/pins/kvest-dlya-detej-10-12-let/4.png",
-    "status": "csv",
-    "scheduledFor": "2026-10-04T20:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
-  },
-  {
-    "id": "scenarij-dnya-rozhdeniya-rebenka-doma-4",
-    "article": "scenarij-dnya-rozhdeniya-rebenka-doma",
-    "title": "Чек-лист ДР дома: 3 этапа подготовки",
-    "description": "Сценарий дня рождения ребёнка дома на 2 часа: 12 игр по порядку, тексты для ведущего, варианты для 5–7 и 8–10 лет, чек-лист подготовки и советы по бюджету. Готовые квесты и задания для печати — на kvestovichok.ru.",
-    "altText": "Чек-лист ДР дома: 3 этапа подготовки",
-    "board": "Детский праздник дома: сценарии",
-    "link": "https://kvestovichok.ru/prazdniki/scenarij-dnya-rozhdeniya-rebenka-doma/?utm_source=pinterest&utm_medium=pin&utm_content=scenarij-dnya-rozhdeniya-rebenka-doma-4",
-    "imageUrl": "https://kvestovichok.ru/pins/scenarij-dnya-rozhdeniya-rebenka-doma/4.png",
-    "imagePath": "public/pins/scenarij-dnya-rozhdeniya-rebenka-doma/4.png",
-    "status": "csv",
-    "scheduledFor": "2026-10-05T09:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
-  },
-  {
-    "id": "zadaniya-dlya-kvesta-4",
-    "article": "zadaniya-dlya-kvesta",
-    "title": "Квест дома: 30 заданий от 5 до 12 лет",
-    "description": "Задания для квеста для детей дома: 30 идей — загадки, шифры, головоломки, испытания и задания для малышей без чтения. С примерами, ответами и реквизитом. Готовые квесты и задания для печати — на kvestovichok.ru.",
-    "altText": "Квест дома: 30 заданий от 5 до 12 лет",
-    "board": "Квесты для детей дома",
-    "link": "https://kvestovichok.ru/kvesty/zadaniya-dlya-kvesta/?utm_source=pinterest&utm_medium=pin&utm_content=zadaniya-dlya-kvesta-4",
-    "imageUrl": "https://kvestovichok.ru/pins/zadaniya-dlya-kvesta/4.png",
-    "imagePath": "public/pins/zadaniya-dlya-kvesta/4.png",
-    "status": "csv",
-    "scheduledFor": "2026-10-05T14:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
+    "status": "pending",
+    "scheduledFor": "2026-10-19T20:00:00+03:00"
   },
   {
     "id": "novogodnij-kvest-dlya-detej-1",
@@ -331,9 +166,73 @@
     "link": "https://kvestovichok.ru/kvesty/novogodnij-kvest-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=novogodnij-kvest-dlya-detej-1",
     "imageUrl": "https://kvestovichok.ru/pins/novogodnij-kvest-dlya-detej/1.png",
     "imagePath": "public/pins/novogodnij-kvest-dlya-detej/1.png",
-    "status": "csv",
-    "scheduledFor": "2026-10-20T09:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
+    "status": "pending",
+    "scheduledFor": "2026-10-20T09:00:00+03:00"
+  },
+  {
+    "id": "igry-na-den-rozhdeniya-dlya-detej-3",
+    "article": "igry-na-den-rozhdeniya-dlya-detej",
+    "title": "Игры для детей разного возраста",
+    "description": "Игры на день рождения для детей дома: 30 игр для квартиры — подвижные, спокойные, командные, для знакомства и для детей разного возраста. Правила и реквизит. Готовые квесты и задания для печати — на kvestovichok.ru.",
+    "altText": "Игры для детей разного возраста",
+    "board": "Конкурсы и игры на день рождения",
+    "link": "https://kvestovichok.ru/konkursy-i-igry/igry-na-den-rozhdeniya-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=igry-na-den-rozhdeniya-dlya-detej-3",
+    "imageUrl": "https://kvestovichok.ru/pins/igry-na-den-rozhdeniya-dlya-detej/3.png",
+    "imagePath": "public/pins/igry-na-den-rozhdeniya-dlya-detej/3.png",
+    "status": "pending",
+    "scheduledFor": "2026-10-20T14:00:00+03:00"
+  },
+  {
+    "id": "konkursy-na-den-rozhdeniya-dlya-detej-3",
+    "article": "konkursy-na-den-rozhdeniya-dlya-detej",
+    "title": "4 конкурса для детей за столом",
+    "description": "Конкурсы на день рождения для детей дома: 25 заданий для 3–4, 5–7, 8–10 и 11–13 лет плюс застольные. Правила, реквизит из квартиры и идеи призов. Готовые квесты и задания для печати — на kvestovichok.ru.",
+    "altText": "4 конкурса для детей за столом",
+    "board": "Конкурсы и игры на день рождения",
+    "link": "https://kvestovichok.ru/konkursy-i-igry/konkursy-na-den-rozhdeniya-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=konkursy-na-den-rozhdeniya-dlya-detej-3",
+    "imageUrl": "https://kvestovichok.ru/pins/konkursy-na-den-rozhdeniya-dlya-detej/3.png",
+    "imagePath": "public/pins/konkursy-na-den-rozhdeniya-dlya-detej/3.png",
+    "status": "pending",
+    "scheduledFor": "2026-10-20T20:00:00+03:00"
+  },
+  {
+    "id": "kvest-dlya-detej-10-12-let-3",
+    "article": "kvest-dlya-detej-10-12-let",
+    "title": "Квест на 10–12 лет с ответами",
+    "description": "Готовый квест для детей 10 лет, 11 и 12 лет дома: сюжет про агентов, 12 заданий с шифрами и логикой, ответы, места для записок и командный вариант. Готовые квесты и задания для печати — на kvestovichok.ru.",
+    "altText": "Квест на 10–12 лет с ответами",
+    "board": "Квесты для детей дома",
+    "link": "https://kvestovichok.ru/kvesty/kvest-dlya-detej-10-12-let/?utm_source=pinterest&utm_medium=pin&utm_content=kvest-dlya-detej-10-12-let-3",
+    "imageUrl": "https://kvestovichok.ru/pins/kvest-dlya-detej-10-12-let/3.png",
+    "imagePath": "public/pins/kvest-dlya-detej-10-12-let/3.png",
+    "status": "pending",
+    "scheduledFor": "2026-10-21T09:00:00+03:00"
+  },
+  {
+    "id": "kvest-dlya-detej-na-den-rozhdeniya-doma-3",
+    "article": "kvest-dlya-detej-na-den-rozhdeniya-doma",
+    "title": "15 загадок для квеста с ответами",
+    "description": "Готовый домашний квест на день рождения: 15 загадок с ответами и местами, где прятать записки, испытания между этапами и советы по возрасту от 5 до 10 лет. Готовые квесты и задания для печати — на kvestovichok.ru.",
+    "altText": "15 загадок для квеста с ответами",
+    "board": "Квесты для детей дома",
+    "link": "https://kvestovichok.ru/kvesty/kvest-dlya-detej-na-den-rozhdeniya-doma/?utm_source=pinterest&utm_medium=pin&utm_content=kvest-dlya-detej-na-den-rozhdeniya-doma-3",
+    "imageUrl": "https://kvestovichok.ru/pins/kvest-dlya-detej-na-den-rozhdeniya-doma/3.png",
+    "imagePath": "public/pins/kvest-dlya-detej-na-den-rozhdeniya-doma/3.png",
+    "status": "pending",
+    "scheduledFor": "2026-10-21T14:00:00+03:00"
+  },
+  {
+    "id": "scenarij-dnya-rozhdeniya-rebenka-doma-3",
+    "article": "scenarij-dnya-rozhdeniya-rebenka-doma",
+    "title": "Программа ДР для детей 5–10 лет: 12 игр",
+    "description": "Сценарий дня рождения ребёнка дома на 2 часа: 12 игр по порядку, тексты для ведущего, варианты для 5–7 и 8–10 лет, чек-лист подготовки и советы по бюджету. Готовые квесты и задания для печати — на kvestovichok.ru.",
+    "altText": "Программа ДР для детей 5–10 лет: 12 игр",
+    "board": "Детский праздник дома: сценарии",
+    "link": "https://kvestovichok.ru/prazdniki/scenarij-dnya-rozhdeniya-rebenka-doma/?utm_source=pinterest&utm_medium=pin&utm_content=scenarij-dnya-rozhdeniya-rebenka-doma-3",
+    "imageUrl": "https://kvestovichok.ru/pins/scenarij-dnya-rozhdeniya-rebenka-doma/3.png",
+    "imagePath": "public/pins/scenarij-dnya-rozhdeniya-rebenka-doma/3.png",
+    "status": "pending",
+    "scheduledFor": "2026-10-21T20:00:00+03:00"
   },
   {
     "id": "novogodnij-kvest-dlya-detej-2",
@@ -345,9 +244,73 @@
     "link": "https://kvestovichok.ru/kvesty/novogodnij-kvest-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=novogodnij-kvest-dlya-detej-2",
     "imageUrl": "https://kvestovichok.ru/pins/novogodnij-kvest-dlya-detej/2.png",
     "imagePath": "public/pins/novogodnij-kvest-dlya-detej/2.png",
-    "status": "csv",
-    "scheduledFor": "2026-10-22T09:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
+    "status": "pending",
+    "scheduledFor": "2026-10-22T09:00:00+03:00"
+  },
+  {
+    "id": "zadaniya-dlya-kvesta-3",
+    "article": "zadaniya-dlya-kvesta",
+    "title": "Задания для квеста: 4 идеи для малышей",
+    "description": "Задания для квеста для детей дома: 30 идей — загадки, шифры, головоломки, испытания и задания для малышей без чтения. С примерами, ответами и реквизитом. Готовые квесты и задания для печати — на kvestovichok.ru.",
+    "altText": "Задания для квеста: 4 идеи для малышей",
+    "board": "Квесты для детей дома",
+    "link": "https://kvestovichok.ru/kvesty/zadaniya-dlya-kvesta/?utm_source=pinterest&utm_medium=pin&utm_content=zadaniya-dlya-kvesta-3",
+    "imageUrl": "https://kvestovichok.ru/pins/zadaniya-dlya-kvesta/3.png",
+    "imagePath": "public/pins/zadaniya-dlya-kvesta/3.png",
+    "status": "pending",
+    "scheduledFor": "2026-10-22T14:00:00+03:00"
+  },
+  {
+    "id": "igry-na-den-rozhdeniya-dlya-detej-4",
+    "article": "igry-na-den-rozhdeniya-dlya-detej",
+    "title": "4 игры-знакомства на праздник",
+    "description": "Игры на день рождения для детей дома: 30 игр для квартиры — подвижные, спокойные, командные, для знакомства и для детей разного возраста. Правила и реквизит. Готовые квесты и задания для печати — на kvestovichok.ru.",
+    "altText": "4 игры-знакомства на праздник",
+    "board": "Конкурсы и игры на день рождения",
+    "link": "https://kvestovichok.ru/konkursy-i-igry/igry-na-den-rozhdeniya-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=igry-na-den-rozhdeniya-dlya-detej-4",
+    "imageUrl": "https://kvestovichok.ru/pins/igry-na-den-rozhdeniya-dlya-detej/4.png",
+    "imagePath": "public/pins/igry-na-den-rozhdeniya-dlya-detej/4.png",
+    "status": "pending",
+    "scheduledFor": "2026-10-22T20:00:00+03:00"
+  },
+  {
+    "id": "konkursy-na-den-rozhdeniya-dlya-detej-4",
+    "article": "konkursy-na-den-rozhdeniya-dlya-detej",
+    "title": "25 весёлых конкурсов без аниматора",
+    "description": "Конкурсы на день рождения для детей дома: 25 заданий для 3–4, 5–7, 8–10 и 11–13 лет плюс застольные. Правила, реквизит из квартиры и идеи призов. Готовые квесты и задания для печати — на kvestovichok.ru.",
+    "altText": "25 весёлых конкурсов без аниматора",
+    "board": "Конкурсы и игры на день рождения",
+    "link": "https://kvestovichok.ru/konkursy-i-igry/konkursy-na-den-rozhdeniya-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=konkursy-na-den-rozhdeniya-dlya-detej-4",
+    "imageUrl": "https://kvestovichok.ru/pins/konkursy-na-den-rozhdeniya-dlya-detej/4.png",
+    "imagePath": "public/pins/konkursy-na-den-rozhdeniya-dlya-detej/4.png",
+    "status": "pending",
+    "scheduledFor": "2026-10-23T09:00:00+03:00"
+  },
+  {
+    "id": "kvest-dlya-detej-10-12-let-4",
+    "article": "kvest-dlya-detej-10-12-let",
+    "title": "Квест с шифрами: 12 этапов на 11–12 лет",
+    "description": "Готовый квест для детей 10 лет, 11 и 12 лет дома: сюжет про агентов, 12 заданий с шифрами и логикой, ответы, места для записок и командный вариант. Готовые квесты и задания для печати — на kvestovichok.ru.",
+    "altText": "Квест с шифрами: 12 этапов на 11–12 лет",
+    "board": "Квесты для детей дома",
+    "link": "https://kvestovichok.ru/kvesty/kvest-dlya-detej-10-12-let/?utm_source=pinterest&utm_medium=pin&utm_content=kvest-dlya-detej-10-12-let-4",
+    "imageUrl": "https://kvestovichok.ru/pins/kvest-dlya-detej-10-12-let/4.png",
+    "imagePath": "public/pins/kvest-dlya-detej-10-12-let/4.png",
+    "status": "pending",
+    "scheduledFor": "2026-10-23T14:00:00+03:00"
+  },
+  {
+    "id": "scenarij-dnya-rozhdeniya-rebenka-doma-4",
+    "article": "scenarij-dnya-rozhdeniya-rebenka-doma",
+    "title": "Чек-лист ДР дома: 3 этапа подготовки",
+    "description": "Сценарий дня рождения ребёнка дома на 2 часа: 12 игр по порядку, тексты для ведущего, варианты для 5–7 и 8–10 лет, чек-лист подготовки и советы по бюджету. Готовые квесты и задания для печати — на kvestovichok.ru.",
+    "altText": "Чек-лист ДР дома: 3 этапа подготовки",
+    "board": "Детский праздник дома: сценарии",
+    "link": "https://kvestovichok.ru/prazdniki/scenarij-dnya-rozhdeniya-rebenka-doma/?utm_source=pinterest&utm_medium=pin&utm_content=scenarij-dnya-rozhdeniya-rebenka-doma-4",
+    "imageUrl": "https://kvestovichok.ru/pins/scenarij-dnya-rozhdeniya-rebenka-doma/4.png",
+    "imagePath": "public/pins/scenarij-dnya-rozhdeniya-rebenka-doma/4.png",
+    "status": "pending",
+    "scheduledFor": "2026-10-23T20:00:00+03:00"
   },
   {
     "id": "novogodnij-kvest-dlya-detej-3",
@@ -359,9 +322,21 @@
     "link": "https://kvestovichok.ru/kvesty/novogodnij-kvest-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=novogodnij-kvest-dlya-detej-3",
     "imageUrl": "https://kvestovichok.ru/pins/novogodnij-kvest-dlya-detej/3.png",
     "imagePath": "public/pins/novogodnij-kvest-dlya-detej/3.png",
-    "status": "csv",
-    "scheduledFor": "2026-10-24T09:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
+    "status": "pending",
+    "scheduledFor": "2026-10-24T09:00:00+03:00"
+  },
+  {
+    "id": "zadaniya-dlya-kvesta-4",
+    "article": "zadaniya-dlya-kvesta",
+    "title": "Квест дома: 30 заданий от 5 до 12 лет",
+    "description": "Задания для квеста для детей дома: 30 идей — загадки, шифры, головоломки, испытания и задания для малышей без чтения. С примерами, ответами и реквизитом. Готовые квесты и задания для печати — на kvestovichok.ru.",
+    "altText": "Квест дома: 30 заданий от 5 до 12 лет",
+    "board": "Квесты для детей дома",
+    "link": "https://kvestovichok.ru/kvesty/zadaniya-dlya-kvesta/?utm_source=pinterest&utm_medium=pin&utm_content=zadaniya-dlya-kvesta-4",
+    "imageUrl": "https://kvestovichok.ru/pins/zadaniya-dlya-kvesta/4.png",
+    "imagePath": "public/pins/zadaniya-dlya-kvesta/4.png",
+    "status": "pending",
+    "scheduledFor": "2026-10-24T14:00:00+03:00"
   },
   {
     "id": "advent-kalendar-dlya-detej-zadaniya-1",
@@ -373,9 +348,8 @@
     "link": "https://kvestovichok.ru/prazdniki/advent-kalendar-dlya-detej-zadaniya/?utm_source=pinterest&utm_medium=pin&utm_content=advent-kalendar-dlya-detej-zadaniya-1",
     "imageUrl": "https://kvestovichok.ru/pins/advent-kalendar-dlya-detej-zadaniya/1.png",
     "imagePath": "public/pins/advent-kalendar-dlya-detej-zadaniya/1.png",
-    "status": "csv",
-    "scheduledFor": "2026-10-25T09:00:00+03:00",
-    "exportedAt": "2026-09-27T17:59:58.326Z"
+    "status": "pending",
+    "scheduledFor": "2026-10-25T09:00:00+03:00"
   },
   {
     "id": "novogodnij-kvest-dlya-detej-4",
