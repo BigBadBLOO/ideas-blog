@@ -2,6 +2,8 @@
 //   node --use-system-ca --env-file=.env scripts/pinterest.mjs boards        создать недостающие доски → pins/boards.json
 //   node --use-system-ca --env-file=.env scripts/pinterest.mjs publish [N]   опубликовать до N пинов, чьё время наступило (по умолчанию 1)
 //   PINTEREST_ENV=sandbox node … scripts/pinterest.mjs demo                   песочница: доска + один пин из очереди (очередь не меняется)
+//   node … scripts/pinterest.mjs list                                          доски и пины аккаунта (в песочнице — тоже)
+//   PINTEREST_ENV=sandbox node … scripts/pinterest.mjs cleanup                 удалить тестовые доски «API test …» из песочницы
 // Env: PINTEREST_TOKEN — access token приложения Pinterest API v5 (scopes: boards:read, boards:write, pins:read, pins:write);
 //      PINTEREST_SANDBOX_TOKEN — токен песочницы
 
@@ -137,15 +139,43 @@ async function demo() {
     console.log(`Проверка GET /pins/${created.id}: ${fetched.title} | ${fetched.link}`);
 }
 
+async function list() {
+    const { items: boards = [] } = await callApi('/boards?page_size=100');
+    console.log(`${IS_SANDBOX ? 'Песочница' : 'Аккаунт'}: ${boards.length} досок`);
+
+    for (const board of boards) {
+        const { items: pins = [] } = await callApi(`/boards/${board.id}/pins?page_size=100`);
+        console.log(`\n«${board.name}» — ${pins.length} пин.`);
+        pins.forEach((pin) => console.log(`  • ${pin.title} → ${(pin.link ?? '').split('?')[0]}`));
+    }
+}
+
+async function cleanup() {
+    if (!IS_SANDBOX) {
+        throw new Error('cleanup работает только в песочнице (PINTEREST_ENV=sandbox)');
+    }
+
+    const { items: boards = [] } = await callApi('/boards?page_size=100');
+
+    for (const board of boards.filter((item) => item.name.startsWith('API test'))) {
+        await fetch(`${API}/boards/${board.id}`, { method: 'DELETE', headers: { Authorization: `Bearer ${PINTEREST_TOKEN}` } });
+        console.log(`- «${board.name}»`);
+    }
+}
+
 const [command, arg] = process.argv.slice(2);
 
 if (command === 'boards') {
     await syncBoards();
+} else if (command === 'list') {
+    await list();
+} else if (command === 'cleanup') {
+    await cleanup();
 } else if (command === 'demo') {
     await demo();
 } else if (command === 'publish') {
     await publishDue(Number(arg ?? 1));
 } else {
-    console.error('Команда: boards | publish [N] | demo');
+    console.error('Команда: boards | publish [N] | demo | list | cleanup');
     process.exit(1);
 }
