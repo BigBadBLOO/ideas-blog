@@ -17,7 +17,18 @@ const COUNTER_ID = siteConfig.match(/yandexMetrikaId:\s*'(\d+)'/)?.[1];
 const HOST = new URL(siteConfig.match(/url:\s*'([^']+)'/)[1]).host;
 
 async function get(url) {
-    const response = await fetch(url, { headers: { Authorization: `OAuth ${YANDEX_OAUTH_TOKEN}` } });
+    let response;
+
+    try {
+        response = await fetch(url, {
+            headers: { Authorization: `OAuth ${YANDEX_OAUTH_TOKEN}` },
+            signal: AbortSignal.timeout(20_000),
+        });
+    } catch (error) {
+        const reason = error.name === 'TimeoutError' ? 'нет ответа за 20 с' : (error.cause?.code ?? error.message);
+        throw new Error(`${new URL(url).host} недоступен (${reason}). Проверьте сеть: VPN, exit node, корпоративный прокси.`);
+    }
+
 
     if (!response.ok) {
         throw new Error(`${response.status} ${url}: ${await response.text()}`);
