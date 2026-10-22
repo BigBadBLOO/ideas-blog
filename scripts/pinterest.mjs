@@ -4,7 +4,8 @@
 //   PINTEREST_ENV=sandbox node … scripts/pinterest.mjs demo                   песочница: доска + один пин из очереди (очередь не меняется)
 //   node … scripts/pinterest.mjs list                                          доски и пины аккаунта (в песочнице — тоже)
 //   PINTEREST_ENV=sandbox node … scripts/pinterest.mjs cleanup                 удалить тестовые доски «API test …» из песочницы
-// Env: PINTEREST_TOKEN — access token приложения Pinterest API v5 (scopes: boards:read, boards:write, pins:read, pins:write);
+// Env: PINTEREST_APP_ID + PINTEREST_APP_SECRET + refresh-токен (PINTEREST_REFRESH_TOKEN или .pinterest-oauth.json,
+//      см. scripts/pinterest-oauth.mjs) — основной способ; иначе PINTEREST_TOKEN (готовый access token);
 //      PINTEREST_SANDBOX_TOKEN — токен песочницы
 
 import { readFile, writeFile } from 'node:fs/promises';
@@ -21,10 +22,55 @@ const BOARD_DESCRIPTIONS = {
     'Новый год с детьми: игры и идеи': 'Новогодний квест, адвент-календарь с заданиями, конкурсы на Новый год для детей и семьи.',
 };
 
-const PINTEREST_TOKEN = IS_SANDBOX ? (process.env.PINTEREST_SANDBOX_TOKEN ?? process.env.PINTEREST_TOKEN) : process.env.PINTEREST_TOKEN;
+async function getRefreshToken() {
+    if (process.env.PINTEREST_REFRESH_TOKEN) {
+        return process.env.PINTEREST_REFRESH_TOKEN;
+    }
+
+    try {
+        return JSON.parse(await readFile('.pinterest-oauth.json', 'utf8')).refreshToken;
+    } catch {
+        return null;
+    }
+}
+
+async function refreshAccessToken(refreshToken) {
+    const { PINTEREST_APP_ID, PINTEREST_APP_SECRET } = process.env;
+    const response = await fetch('https://api.pinterest.com/v5/oauth/token', {
+        method: 'POST',
+        headers: {
+            Authorization: `Basic ${Buffer.from(`${PINTEREST_APP_ID}:${PINTEREST_APP_SECRET}`).toString('base64')}`,
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({ grant_type: 'refresh_token', refresh_token: refreshToken }),
+    });
+    const data = await response.json();
+
+    if (!response.ok) {
+        throw new Error(`oauth/token ${response.status}: ${JSON.stringify(data)}`);
+    }
+
+    return data.access_token;
+}
+
+async function resolveToken() {
+    if (IS_SANDBOX) {
+        return process.env.PINTEREST_SANDBOX_TOKEN ?? process.env.PINTEREST_TOKEN;
+    }
+
+    const refreshToken = await getRefreshToken();
+
+    if (refreshToken && process.env.PINTEREST_APP_ID && process.env.PINTEREST_APP_SECRET) {
+        return refreshAccessToken(refreshToken);
+    }
+
+    return process.env.PINTEREST_TOKEN;
+}
+
+const PINTEREST_TOKEN = await resolveToken();
 
 if (!PINTEREST_TOKEN) {
-    console.error(`Set ${IS_SANDBOX ? 'PINTEREST_SANDBOX_TOKEN' : 'PINTEREST_TOKEN'} in .env`);
+    console.error('Нет токена: выполните scripts/pinterest-oauth.mjs или задайте PINTEREST_TOKEN');
     process.exit(1);
 }
 
