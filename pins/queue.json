@@ -144,8 +144,10 @@
     "link": "https://kvestovichok.ru/konkursy-i-igry/konkursy-na-den-rozhdeniya-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=konkursy-na-den-rozhdeniya-dlya-detej-2",
     "imageUrl": "https://kvestovichok.ru/pins/konkursy-na-den-rozhdeniya-dlya-detej/2.png",
     "imagePath": "public/pins/konkursy-na-den-rozhdeniya-dlya-detej/2.png",
-    "status": "pending",
-    "scheduledFor": "2026-10-26T09:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-10-26T09:00:00+03:00",
+    "pinId": "617626536448505732",
+    "publishedAt": "2026-10-26T21:38:23.168Z"
   },
   {
     "id": "kvest-dlya-detej-10-12-let-2",
