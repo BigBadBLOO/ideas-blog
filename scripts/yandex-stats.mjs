@@ -65,14 +65,30 @@ async function metrika(days) {
 async function webmaster() {
     const { user_id: userId } = await get('https://api.webmaster.yandex.net/v4/user');
     const { hosts } = await get(`https://api.webmaster.yandex.net/v4/user/${userId}/hosts`);
-    const host = hosts.find((item) => item.ascii_host_url.includes(HOST));
+    // Сайт заведён и как http, и как https; данные бывают загружены только по одному из них — https пробуем первым
+    const candidates = hosts
+        .filter((item) => new URL(item.ascii_host_url).host === HOST)
+        .sort((a, b) => Number(b.ascii_host_url.startsWith('https:')) - Number(a.ascii_host_url.startsWith('https:')));
 
-    if (!host) {
+    if (!candidates.length) {
         throw new Error(`Сайт ${HOST} не найден в Вебмастере`);
     }
 
-    const api = `https://api.webmaster.yandex.net/v4/user/${userId}/hosts/${encodeURIComponent(host.host_id)}`;
-    const summary = await get(`${api}/summary`);
+    let host, api, summary;
+
+    for (const item of candidates) {
+        host = item;
+        api = `https://api.webmaster.yandex.net/v4/user/${userId}/hosts/${encodeURIComponent(item.host_id)}`;
+
+        try {
+            summary = await get(`${api}/summary`);
+            break;
+        } catch (error) {
+            if (!error.message.includes('HOST_NOT_LOADED') || item === candidates.at(-1)) {
+                throw error;
+            }
+        }
+    }
     console.log(`\n${host.ascii_host_url}: в поиске ${summary.searchable_pages_count ?? 0} стр., исключено ${summary.excluded_pages_count ?? 0}, ИКС ${summary.sqi ?? 0}`);
 
     if (summary.site_problems && Object.keys(summary.site_problems).length) {
