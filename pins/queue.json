@@ -234,8 +234,10 @@
     "link": "https://kvestovichok.ru/kvesty/zadaniya-dlya-kvesta/?utm_source=pinterest&utm_medium=pin&utm_content=zadaniya-dlya-kvesta-2",
     "imageUrl": "https://kvestovichok.ru/pins/zadaniya-dlya-kvesta/2.png",
     "imagePath": "public/pins/zadaniya-dlya-kvesta/2.png",
-    "status": "pending",
-    "scheduledFor": "2026-10-28T09:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-10-28T09:00:00+03:00",
+    "pinId": "617626536448561779",
+    "publishedAt": "2026-10-29T21:48:56.139Z"
   },
   {
     "id": "igry-na-den-rozhdeniya-dlya-detej-3",
