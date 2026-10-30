@@ -264,8 +264,10 @@
     "link": "https://kvestovichok.ru/konkursy-i-igry/konkursy-na-den-rozhdeniya-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=konkursy-na-den-rozhdeniya-dlya-detej-3",
     "imageUrl": "https://kvestovichok.ru/pins/konkursy-na-den-rozhdeniya-dlya-detej/3.png",
     "imagePath": "public/pins/konkursy-na-den-rozhdeniya-dlya-detej/3.png",
-    "status": "pending",
-    "scheduledFor": "2026-10-28T20:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-10-28T20:00:00+03:00",
+    "pinId": "617626536448578535",
+    "publishedAt": "2026-10-30T21:29:58.954Z"
   },
   {
     "id": "advent-kalendar-dlya-detej-zadaniya-3",
