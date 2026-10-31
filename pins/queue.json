@@ -279,8 +279,10 @@
     "link": "https://kvestovichok.ru/prazdniki/advent-kalendar-dlya-detej-zadaniya/?utm_source=pinterest&utm_medium=pin&utm_content=advent-kalendar-dlya-detej-zadaniya-3",
     "imageUrl": "https://kvestovichok.ru/pins/advent-kalendar-dlya-detej-zadaniya/3.png",
     "imagePath": "public/pins/advent-kalendar-dlya-detej-zadaniya/3.png",
-    "status": "pending",
-    "scheduledFor": "2026-10-29T09:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-10-29T09:00:00+03:00",
+    "pinId": "617626536448586499",
+    "publishedAt": "2026-10-31T12:28:09.284Z"
   },
   {
     "id": "kvest-dlya-detej-10-12-let-3",
