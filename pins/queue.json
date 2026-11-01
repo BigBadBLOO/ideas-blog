@@ -324,8 +324,10 @@
     "link": "https://kvestovichok.ru/kvesty/novogodnij-kvest-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=novogodnij-kvest-dlya-detej-3",
     "imageUrl": "https://kvestovichok.ru/pins/novogodnij-kvest-dlya-detej/3.png",
     "imagePath": "public/pins/novogodnij-kvest-dlya-detej/3.png",
-    "status": "pending",
-    "scheduledFor": "2026-10-30T09:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-10-30T09:00:00+03:00",
+    "pinId": "617626536448609657",
+    "publishedAt": "2026-11-01T21:11:19.287Z"
   },
   {
     "id": "scenarij-dnya-rozhdeniya-rebenka-doma-3",
