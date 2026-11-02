@@ -339,8 +339,10 @@
     "link": "https://kvestovichok.ru/prazdniki/scenarij-dnya-rozhdeniya-rebenka-doma/?utm_source=pinterest&utm_medium=pin&utm_content=scenarij-dnya-rozhdeniya-rebenka-doma-3",
     "imageUrl": "https://kvestovichok.ru/pins/scenarij-dnya-rozhdeniya-rebenka-doma/3.png",
     "imagePath": "public/pins/scenarij-dnya-rozhdeniya-rebenka-doma/3.png",
-    "status": "pending",
-    "scheduledFor": "2026-10-30T14:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-10-30T14:00:00+03:00",
+    "pinId": "617626536448622856",
+    "publishedAt": "2026-11-02T15:50:46.545Z"
   },
   {
     "id": "zadaniya-dlya-kvesta-3",
