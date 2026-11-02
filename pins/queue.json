@@ -354,8 +354,10 @@
     "link": "https://kvestovichok.ru/kvesty/zadaniya-dlya-kvesta/?utm_source=pinterest&utm_medium=pin&utm_content=zadaniya-dlya-kvesta-3",
     "imageUrl": "https://kvestovichok.ru/pins/zadaniya-dlya-kvesta/3.png",
     "imagePath": "public/pins/zadaniya-dlya-kvesta/3.png",
-    "status": "pending",
-    "scheduledFor": "2026-10-30T20:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-10-30T20:00:00+03:00",
+    "pinId": "617626536448630502",
+    "publishedAt": "2026-11-02T23:53:18.460Z"
   },
   {
     "id": "advent-kalendar-dlya-detej-zadaniya-4",
