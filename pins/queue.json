@@ -384,8 +384,10 @@
     "link": "https://kvestovichok.ru/konkursy-i-igry/igry-na-den-rozhdeniya-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=igry-na-den-rozhdeniya-dlya-detej-4",
     "imageUrl": "https://kvestovichok.ru/pins/igry-na-den-rozhdeniya-dlya-detej/4.png",
     "imagePath": "public/pins/igry-na-den-rozhdeniya-dlya-detej/4.png",
-    "status": "pending",
-    "scheduledFor": "2026-10-31T14:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-10-31T14:00:00+03:00",
+    "pinId": "617626536448646983",
+    "publishedAt": "2026-11-03T22:18:32.704Z"
   },
   {
     "id": "konkursy-na-den-rozhdeniya-dlya-detej-4",
