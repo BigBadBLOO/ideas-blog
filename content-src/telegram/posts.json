@@ -105,7 +105,9 @@
     "id": "post-kto-vret",
     "scheduledFor": "2026-11-03T19:00:00+03:00",
     "text": "<b>Задача на логику: кто съел сосиску?</b>\n\nКто-то из трёх котов съел сосиску.\nРыжик: «Это не я».\nМурзик: «Это Пушок».\nПушок: «Мурзик врёт».\n\nПравду сказал только один кот. Кто виноват?\n\nОтвет: <tg-spoiler>Рыжик — только тогда правду говорит один Пушок</tg-spoiler>\n\nТакие задачи хорошо заходят детям 10–13 лет. Больше заданий для квеста → https://kvestovichok.ru/kvesty/zadaniya-dlya-kvesta/",
-    "status": "pending"
+    "status": "published",
+    "messageId": 17,
+    "publishedAt": "2026-11-03T21:39:35.071Z"
   },
   {
     "id": "post-mandarin-v-varezhkah",
