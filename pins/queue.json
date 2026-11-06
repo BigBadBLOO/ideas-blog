@@ -474,8 +474,10 @@
     "link": "https://kvestovichok.ru/kvesty/zadaniya-dlya-kvesta/?utm_source=pinterest&utm_medium=pin&utm_content=zadaniya-dlya-kvesta-4",
     "imageUrl": "https://kvestovichok.ru/pins/zadaniya-dlya-kvesta/4.png",
     "imagePath": "public/pins/zadaniya-dlya-kvesta/4.png",
-    "status": "pending",
-    "scheduledFor": "2026-11-02T14:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-11-02T14:00:00+03:00",
+    "pinId": "617626536448698882",
+    "publishedAt": "2026-11-06T22:07:02.986Z"
   },
   {
     "id": "konkursy-na-novyj-god-dlya-detej-2",
