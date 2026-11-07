@@ -504,8 +504,10 @@
     "link": "https://kvestovichok.ru/konkursy-i-igry/konkursy-na-novyj-god-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=konkursy-na-novyj-god-dlya-detej-3",
     "imageUrl": "https://kvestovichok.ru/pins/konkursy-na-novyj-god-dlya-detej/3.png",
     "imagePath": "public/pins/konkursy-na-novyj-god-dlya-detej/3.png",
-    "status": "pending",
-    "scheduledFor": "2026-11-05T09:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-11-05T09:00:00+03:00",
+    "pinId": "617626536448713933",
+    "publishedAt": "2026-11-07T20:52:12.906Z"
   },
   {
     "id": "konkursy-na-novyj-god-dlya-detej-4",
