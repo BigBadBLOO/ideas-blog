@@ -4,18 +4,22 @@ import { SITE } from '@/site.config';
 interface Props {
     title?: string;
     text?: string;
+    // slug товара: бот сразу предложит этот квест; без него — меню всех квестов
+    quest?: string;
 }
 
 const {
     title = 'Все квесты — бесплатно в Telegram',
-    text = 'Подпишитесь на наш канал: там лежат все квесты для печати, а к каждому празднику появляются новые игры и задания.',
+    text = 'Нажмите кнопку — бот пришлёт квест для печати. Квесты бесплатные для подписчиков нашего канала, а к каждому празднику там появляются новые игры и задания.',
+    quest,
 } = Astro.props;
+const href = quest ? `${SITE.telegramBotUrl}?start=${quest}` : SITE.telegramBotUrl;
 ---
 
 <aside class="telegram-cta">
     <p class="telegram-cta__title">{title}</p>
     <p class="telegram-cta__text">{text}</p>
-    <a class="telegram-cta__button" href={SITE.telegramUrl} target="_blank" rel="noopener">Забрать в Telegram</a>
+    <a class="telegram-cta__button" href={href} target="_blank" rel="noopener">Забрать в Telegram</a>
 </aside>
 
 <style>

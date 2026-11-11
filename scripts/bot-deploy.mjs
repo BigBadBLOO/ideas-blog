@@ -1,7 +1,7 @@
 // Usage: node --use-system-ca --env-file=.env scripts/bot-deploy.mjs
 // Деплой бота @kvestovichok_bot (bot/) в Yandex Cloud Functions через REST API и подключение вебхука Telegram.
 // Без yc CLI: его gRPC не проходит через корпоративную сеть, а HTTPS из Node проходит.
-// Env: YC_SA_KEY_FILE — путь к авторизованному ключу сервисного аккаунта (JSON из консоли Облака, роль functions.admin),
+// Env: YC_SA_KEY_FILE (по умолчанию ~/.config/kvestovichok/yc-sa-key.json) — путь к авторизованному ключу сервисного аккаунта (JSON из консоли Облака, роль functions.admin),
 //      YC_FOLDER_ID, TELEGRAM_BOT_TOKEN. OAuth-токены, выпущенные после 01.06.2026, Облако на IAM-токен не меняет.
 
 import { execFile } from 'node:child_process';
@@ -16,7 +16,7 @@ const CHANNEL = '@kvestovichok';
 const RUNTIME = process.env.RUNTIME ?? 'nodejs22';
 const FUNCTIONS_API = 'https://serverless-functions.api.cloud.yandex.net/functions/v1';
 const IAM_TOKENS_URL = 'https://iam.api.cloud.yandex.net/iam/v1/tokens';
-const { YC_SA_KEY_FILE, YC_FOLDER_ID, TELEGRAM_BOT_TOKEN } = process.env;
+const { YC_SA_KEY_FILE = '~/.config/kvestovichok/yc-sa-key.json', YC_FOLDER_ID, TELEGRAM_BOT_TOKEN } = process.env;
 
 if (!YC_SA_KEY_FILE || !YC_FOLDER_ID || !TELEGRAM_BOT_TOKEN) {
     console.error('Set YC_SA_KEY_FILE, YC_FOLDER_ID and TELEGRAM_BOT_TOKEN in .env');
@@ -64,7 +64,7 @@ async function getIamToken() {
     const encode = (value) => Buffer.from(JSON.stringify(value)).toString('base64url');
     const unsigned = `${encode({ typ: 'JWT', alg: 'PS256', kid: key.id })}.${encode({ aud: IAM_TOKENS_URL, iss: key.service_account_id, iat: now, exp: now + 600 })}`;
     const signature = sign('sha256', Buffer.from(unsigned), {
-        key: key.private_key,
+        key: key.private_key.slice(key.private_key.indexOf('-----BEGIN')),
         padding: constants.RSA_PKCS1_PSS_PADDING,
         saltLength: constants.RSA_PSS_SALTLEN_DIGEST,
     }).toString('base64url');
