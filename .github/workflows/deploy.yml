@@ -39,3 +39,31 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Сообщить Яндексу о новых и изменённых статьях (IndexNow) — без Вебмастера и ручного pnpm indexnow
+  indexnow:
+    needs: deploy
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Отправить изменённые статьи
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: |
+          git cat-file -e "$BEFORE" 2>/dev/null || { echo 'Нет предыдущего коммита — пропускаю'; exit 0; }
+          paths=''
+          for file in $(git diff --name-only --diff-filter=AM "$BEFORE" "$GITHUB_SHA" -- 'src/content/articles/*.md'); do
+            grep -qE '^status: (published|evergreen)' "$file" || continue
+            category=$(grep -m1 '^category:' "$file" | awk '{print $2}')
+            paths="$paths /$category/$(basename "$file" .md)/ /$category/"
+          done
+          [ -n "$paths" ] || { echo 'Статьи не менялись'; exit 0; }
+          sleep 30
+          node scripts/indexnow.mjs / $(echo $paths | tr ' ' '\n' | sort -u)
