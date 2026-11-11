@@ -20,9 +20,15 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL: '@kvestovichok'
+      # Тот же пост — в группу ВК (без файлов); ошибка ВК не мешает сохранить очередь Telegram
+      - run: node scripts/vk.mjs publish 1
+        continue-on-error: true
+        env:
+          VK_GROUP_TOKEN: ${{ secrets.VK_GROUP_TOKEN }}
+          VK_GROUP_ID: ${{ secrets.VK_GROUP_ID }}
       - name: Save queue
         run: |
           git config user.name "telegram-bot"
           git config user.email "telegram-bot@users.noreply.github.com"
           git add content-src/telegram/posts.json
-          git diff --cached --quiet || (git commit -m "chore: publish telegram post" && git push)
+          git diff --cached --quiet || (git commit -m "chore: publish telegram/vk post" && git push)

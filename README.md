@@ -12,7 +12,7 @@
 |---|---|---|
 | Выкладка сайта + IndexNow для изменённых статей | после каждого push в `main` | `.github/workflows/deploy.yml` |
 | Публикация пинов в Pinterest | 3 раза в день: 9:15, 14:15, 20:15 МСК | `.github/workflows/publish-pins.yml`, очередь `pins/queue.json` |
-| Посты в Telegram | раз в день в 19:05 МСК, если в очереди есть пост на сегодня | `.github/workflows/publish-telegram.yml`, очередь `content-src/telegram/posts.json` |
+| Посты в Telegram → ВК и Дзен | раз в день в 19:05 МСК, если в очереди есть пост на сегодня; тот же пост уходит в группу ВК (кроме постов с PDF), в Дзен его переносит бот @zen_sync_bot | `.github/workflows/publish-telegram.yml`, очередь `content-src/telegram/posts.json` |
 
 Каждая публикация отмечается в своей очереди коммитом от бота — перед работой делайте `git pull`.
 
@@ -78,6 +78,8 @@ PINTEREST_ENV=sandbox pnpm pinterest demo|list|cleanup   # тесты в пес�
 
 pnpm telegram check            # проверить бота и права в канале
 pnpm telegram publish 1        # вручную опубликовать пост, чьё время наступило
+pnpm vk check                  # проверить ключ группы ВК
+pnpm vk preview <id>           # как пост из очереди будет выглядеть в ВК
 
 pnpm stats metrika [дней]      # отчёт Яндекс Метрики
 pnpm stats webmaster           # отчёт Яндекс Вебмастера
@@ -93,7 +95,7 @@ pnpm serp "запрос"             # топ-10 выдачи Яндекса
 
 Только в `.env` (образец — `.env.example`), файл в git не попадает. Для GitHub Actions те же ключи лежат
 в Settings → Secrets: `PINTEREST_APP_ID`, `PINTEREST_APP_SECRET`, `PINTEREST_REFRESH_TOKEN`,
-`TELEGRAM_BOT_TOKEN`; переменная `PINS_ENABLED=true` включает автопубликацию пинов.
+`TELEGRAM_BOT_TOKEN`, `VK_GROUP_TOKEN`, `VK_GROUP_ID`; переменная `PINS_ENABLED=true` включает автопубликацию пинов.
 
 ## Структура
 

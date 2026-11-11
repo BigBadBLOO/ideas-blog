@@ -15,6 +15,7 @@
     "pinterest": "node --use-system-ca --env-file=.env scripts/pinterest.mjs",
     "pinterest:auth": "node --use-system-ca --env-file=.env scripts/pinterest-oauth.mjs",
     "telegram": "node --use-system-ca --env-file=.env scripts/telegram.mjs",
+    "vk": "node --use-system-ca --env-file=.env scripts/vk.mjs",
     "stats": "node --use-system-ca --env-file=.env scripts/yandex-stats.mjs",
     "indexnow": "node --use-system-ca scripts/indexnow.mjs"
   },
