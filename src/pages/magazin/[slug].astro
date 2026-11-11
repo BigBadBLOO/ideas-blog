@@ -41,7 +41,7 @@ const jsonLd = [
             </ul>
             {
                 isFree ? (
-                    <a class="button" href={telegramUrl ?? `${SITE.telegramBotUrl}?start=${product.id}`} target="_blank" rel="noopener">
+                    <a class="button" href={telegramUrl ?? SITE.telegramUrl} target="_blank" rel="noopener">
                         Получить бесплатно в Telegram
                     </a>
                 ) : buyUrl ? (
@@ -64,7 +64,7 @@ const jsonLd = [
             }
         </div>
     </div>
-    <div class="product__cta"><TelegramCta quest={product.id} /></div>
+    <div class="product__cta"><TelegramCta /></div>
 </BaseLayout>
 
 <style>
