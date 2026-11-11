@@ -1,5 +1,5 @@
 // Бот @kvestovichok_bot: выдаёт PDF-квесты подписчикам канала.
-// Работает как Yandex Cloud Function (вебхук Telegram), деплой — scripts/bot-deploy.sh.
+// Работает как Yandex Cloud Function (вебхук Telegram), деплой — scripts/bot-deploy.mjs.
 // Сайт ведёт на t.me/kvestovichok_bot?start=<slug товара>. Бот проверяет подписку на канал и копирует
 // пользователю пост канала с PDF — файлы отдельно не храним.
 // Env: TELEGRAM_BOT_TOKEN, TELEGRAM_CHANNEL (@kvestovichok)
@@ -20,7 +20,7 @@ const SUBSCRIBED = new Set(['creator', 'administrator', 'member']);
 const { TELEGRAM_BOT_TOKEN, TELEGRAM_CHANNEL } = process.env;
 const CHANNEL_URL = `https://t.me/${TELEGRAM_CHANNEL.replace(/^@/, '')}`;
 
-// Секрет вебхука выводим из токена — его не нужно хранить отдельно (тот же расчёт в bot-deploy.sh)
+// Секрет вебхука выводим из токена — его не нужно хранить отдельно (тот же расчёт в bot-deploy.mjs)
 const WEBHOOK_SECRET = crypto.createHash('sha256').update(`webhook:${TELEGRAM_BOT_TOKEN}`).digest('hex').slice(0, 32);
 
 async function callApi(method, body) {
