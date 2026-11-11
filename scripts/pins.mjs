@@ -43,16 +43,17 @@ body { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; color: #
 .badge { display: inline-block; padding: 14px 30px; border-radius: 999px; font-size: 30px; font-weight: 700; }
 `;
 
+// Крупное число — только если заголовок с него начинается: вырезанное из середины ломает фразу («подготовка за минут»)
 function splitNumber(title) {
-    const match = title.match(/^(.*?)(\d+(?:[–-]\d+)?)(.*)$/);
+    const match = title.match(/^(\d+(?:[–-]\d+)?)(.*)$/);
 
     if (!match) {
         return { number: '', rest: title };
     }
 
-    const [, before, number, after] = match;
+    const [, number, after] = match;
 
-    return { number, rest: `${before}${after}`.replace(/^[\s:,—-]+|[\s:,—-]+$/g, '').replace(/\s{2,}/g, ' ') };
+    return { number, rest: after.replace(/^[\s:,—-]+|[\s:,—-]+$/g, '').replace(/\s{2,}/g, ' ') };
 }
 
 function templateNumber({ title, color }) {
@@ -142,11 +143,16 @@ async function getPreviews(products) {
     return [];
 }
 
-function pickTemplate(index, context) {
+function pickTemplate(index, title, context) {
     const order = [templateNumber, context.previews.length ? templateCollage : templateList, templateList];
     const template = order[index % order.length];
+    const hasItems = context.items.length >= 3;
 
-    return template === templateList && context.items.length < 3 ? templateNumber : template;
+    if (template === templateNumber && !splitNumber(title).number && hasItems) {
+        return templateList;
+    }
+
+    return template === templateList && !hasItems ? templateNumber : template;
 }
 
 const toMonthDay = (date) => `${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
@@ -245,7 +251,7 @@ for (const file of (await readdir(ARTICLES_DIR)).filter((name) => name.endsWith(
 
         if (isRenderingImages) {
             const htmlPath = join(workDir, `${id}.html`);
-            const template = pickTemplate(i, context);
+            const template = pickTemplate(i, pinTitle, context);
             await writeFile(htmlPath, `<!doctype html><html lang="ru"><head><meta charset="utf-8"></head><body>${template({ ...context, title: pinTitle })}</body></html>`);
             await screenshot(htmlPath, resolve(`public${imagePath}`), PIN.width, PIN.height);
         }
