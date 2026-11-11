@@ -10,7 +10,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
 const QUEUE_PATH = 'content-src/telegram/posts.json';
-const VK_SINCE = '2026-11-12';
+const VK_SINCE = '2026-11-11T16:00';
 const API_VERSION = '5.199';
 const { VK_GROUP_TOKEN, VK_GROUP_ID } = process.env;
 
@@ -108,10 +108,16 @@ async function publish(limit) {
 
     for (const post of due) {
         try {
-            const { post_id: postId } = await callApi('wall.post', {
-                owner_id: `-${VK_GROUP_ID}`,
-                from_group: 1,
-                ...buildPost(post),
+            const params = { owner_id: `-${VK_GROUP_ID}`, from_group: 1, ...buildPost(post) };
+            // ВК отклоняет превью ссылки, если картинка страницы мельче его минимума (link_photo_sizing_rule) — тогда без превью
+            const { post_id: postId } = await callApi('wall.post', params).catch((error) => {
+                if (!params.attachments || !error.message.includes('link_photo')) {
+                    throw error;
+                }
+
+                delete params.attachments;
+
+                return callApi('wall.post', params);
             });
             Object.assign(post, { vkPostId: postId, vkPublishedAt: new Date().toISOString() });
             delete post.vkLastError;
