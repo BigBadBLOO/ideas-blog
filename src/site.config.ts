@@ -4,6 +4,8 @@ export const SITE = {
     url: 'https://kvestovichok.ru',
     locale: 'ru_RU',
     telegramUrl: 'https://t.me/kvestovichok',
+    // Бот выдаёт PDF подписчикам канала: ?start=<slug товара> — сразу нужный квест, без параметра — меню (bot/index.js)
+    telegramBotUrl: 'https://t.me/kvestovichok_bot',
     dzenUrl: 'https://dzen.ru/id/6af4640faa0d9d40fd8cfef9',
     contactEmail: 'kvestovichok@yandex.ru',
     // РСЯ: ID блоков из partner.yandex.ru. Пока null — рекламные слоты не рендерятся.
