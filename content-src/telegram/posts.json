@@ -137,8 +137,12 @@
   {
     "id": "post-zagadka-mishura",
     "scheduledFor": "2026-11-11T16:14:00+03:00",
-    "status": "pending",
-    "text": "<b>Новогодняя загадка</b>\n\nБлестящая, пушистая, будто серебряный хвост, обвивает ёлку от макушки до самого низа.\n\nЧто это? Ответ: <tg-spoiler>мишура (засчитайте и «дождик»)</tg-spoiler>\n\n40 новогодних загадок с ответами — для малышей, школьников и всей семьи → https://kvestovichok.ru/kvesty/novogodnie-zagadki-dlya-detej/"
+    "status": "published",
+    "text": "<b>Новогодняя загадка</b>\n\nБлестящая, пушистая, будто серебряный хвост, обвивает ёлку от макушки до самого низа.\n\nЧто это? Ответ: <tg-spoiler>мишура (засчитайте и «дождик»)</tg-spoiler>\n\n40 новогодних загадок с ответами — для малышей, школьников и всей семьи → https://kvestovichok.ru/kvesty/novogodnie-zagadki-dlya-detej/",
+    "messageId": 23,
+    "publishedAt": "2026-11-11T13:14:22.858Z",
+    "vkPostId": 2,
+    "vkPublishedAt": "2026-11-11T13:14:25.382Z"
   },
   {
     "id": "post-shifrovka-deda-moroza",
