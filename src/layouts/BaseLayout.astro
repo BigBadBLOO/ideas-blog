@@ -12,7 +12,7 @@ interface Props {
     jsonLd?: Record<string, unknown>[];
 }
 
-const { title, description, ogType = 'website', publishedAt, noindex = false, image = '/icon-512.png', jsonLd = [] } = Astro.props;
+const { title, description, ogType = 'website', publishedAt, noindex = false, image = '/og.png', jsonLd = [] } = Astro.props;
 const imageUrl = new URL(image, SITE.url).href;
 const structuredData = [
     {

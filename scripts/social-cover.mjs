@@ -1,13 +1,19 @@
 // Usage: node scripts/social-cover.mjs
-// Обложка для групп ВК и Дзена 1920×768 → brand/cover.png: название, подпись и веер из обложек квестов.
-// Важное держим в центральной зоне: мобильный ВК обрезает края обложки.
+// Название, подпись и веер из обложек квестов в двух размерах:
+//   brand/cover.png 1920×768 — обложка групп ВК и Дзена (важное в центре: мобильный ВК обрезает края);
+//   public/og.png   1200×630 — превью ссылок на главную и разделы (og:image по умолчанию).
 
 import { mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { screenshot } from './lib/chrome.mjs';
 
-const SIZE = { width: 1920, height: 768 };
+// Вёрстка — в координатах обложки 1920×768; другие размеры получаем масштабом и вертикальным отступом
+const STAGE = { width: 1920, height: 768 };
+const OUTPUTS = [
+    { path: 'brand/cover.png', width: 1920, height: 768 },
+    { path: 'public/og.png', width: 1200, height: 630 },
+];
 const COVERS = [
     'kvest-sekretnye-agenty',
     'piratskij-kvest-sokrovishcha-kapitana',
@@ -18,9 +24,15 @@ const COVERS = [
 
 const ANGLES = [-16, -8, 0, 8, 16];
 
-const html = `<!doctype html><html lang="ru"><head><meta charset="utf-8"><style>
+const render = ({ width, height }) => {
+    const zoom = width / STAGE.width;
+    const offset = (height / zoom - STAGE.height) / 2;
+
+    return `<!doctype html><html lang="ru"><head><meta charset="utf-8"><style>
 * { box-sizing: border-box; margin: 0; }
-html, body { width: ${SIZE.width}px; height: ${SIZE.height}px; overflow: hidden; }
+html { zoom: ${zoom}; }
+html, body { width: ${STAGE.width}px; height: ${height / zoom}px; overflow: hidden; }
+.stage { position: absolute; left: 0; top: ${offset}px; width: ${STAGE.width}px; height: ${STAGE.height}px; }
 body {
     font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; color: #fff;
     background: radial-gradient(circle at 20% 15%, #ff8a4c, #ff6b2c 45%, #d9531c);
@@ -40,17 +52,24 @@ body {
 </style></head><body>
 <div class="circle" style="width:620px;height:620px;right:-180px;top:-260px"></div>
 <div class="circle" style="width:420px;height:420px;left:-140px;bottom:-220px"></div>
+<div class="stage">
 <div class="text">
     <div class="name">Квестовичок</div>
     <div class="tagline">Готовые квесты, конкурсы и игры<br>для детского праздника дома</div>
     <div class="badges"><span class="badge">3–13 лет</span><span class="badge">PDF для печати</span><span class="badge">бесплатно</span></div>
 </div>
 <div class="fan">${COVERS.map((src, i) => `<img src="${src}" style="transform: rotate(${ANGLES[i]}deg)">`).join('')}</div>
+</div>
 </body></html>`;
+};
 
 const workDir = await mkdtemp(join(tmpdir(), 'cover-'));
-const htmlPath = join(workDir, 'cover.html');
-await writeFile(htmlPath, html);
-await screenshot(htmlPath, resolve('brand/cover.png'), SIZE.width, SIZE.height);
+
+for (const output of OUTPUTS) {
+    const htmlPath = join(workDir, `${output.width}x${output.height}.html`);
+    await writeFile(htmlPath, render(output));
+    await screenshot(htmlPath, resolve(output.path), output.width, output.height);
+    console.log(`✓ ${output.path}`);
+}
+
 await rm(workDir, { recursive: true, force: true });
-console.log('✓ brand/cover.png');
