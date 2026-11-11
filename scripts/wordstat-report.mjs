@@ -20,7 +20,7 @@ const readJsonDir = async (dir) => {
 const tops = await readJsonDir(join(DIR, 'top'));
 const dynamics = await readJsonDir(join(DIR, 'dynamics'));
 
-const format = (n) => n.toLocaleString('ru-RU');
+const format = (n) => (n ?? 0).toLocaleString('ru-RU');
 
 function getSeasonality(months) {
     const lastYear = months.slice(-12);
