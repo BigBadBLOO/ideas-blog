@@ -148,7 +148,11 @@
     "id": "post-shifrovka-deda-moroza",
     "scheduledFor": "2026-11-12T19:00:00+03:00",
     "text": "<b>Шифровка от Деда Мороза</b>\n\nКаждая буква — её номер в алфавите: А=1, Б=2, В=3… Букву Ё тоже считаем.\n\n<code>17-16-5 7-13-12-16-11</code>\n\nГде спрятан подарок? Ответ: <tg-spoiler>ПОД ЁЛКОЙ</tg-spoiler>\n\nКонкурс для детей от 8 лет — и ещё 24 новогодних → https://kvestovichok.ru/konkursy-i-igry/konkursy-na-novyj-god-dlya-detej/",
-    "status": "pending"
+    "status": "published",
+    "messageId": 24,
+    "publishedAt": "2026-11-12T22:10:31.846Z",
+    "vkPostId": 4,
+    "vkPublishedAt": "2026-11-12T22:10:34.159Z"
   },
   {
     "id": "post-fanty-bez-obid",
