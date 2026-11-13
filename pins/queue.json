@@ -564,8 +564,10 @@
     "link": "https://kvestovichok.ru/prazdniki/advent-kalendar-dlya-detej-zadaniya/?utm_source=pinterest&utm_medium=pin&utm_content=advent-kalendar-dlya-detej-zadaniya-5",
     "imageUrl": "https://kvestovichok.ru/pins/advent-kalendar-dlya-detej-zadaniya/5.png",
     "imagePath": "public/pins/advent-kalendar-dlya-detej-zadaniya/5.png",
-    "status": "pending",
-    "scheduledFor": "2026-11-12T20:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-11-12T20:00:00+03:00",
+    "pinId": "617626536448815192",
+    "publishedAt": "2026-11-13T14:34:09.799Z"
   },
   {
     "id": "igry-na-den-rozhdeniya-dlya-detej-5",
