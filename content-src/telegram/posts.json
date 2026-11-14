@@ -167,8 +167,12 @@
   {
     "id": "post-zagadki-dlya-kvesta-kuhnya",
     "scheduledFor": "2026-11-14T19:00:00+03:00",
-    "status": "pending",
-    "text": "<b>Три загадки для квеста на кухне</b>\n\n1. Под крышей четыре ножки, а на крыше — суп да ложки.\n2. В воде родится, а воды боится.\n3. Сама не ем, а людей кормлю.\n\nОтветы: <tg-spoiler>стол — записку скотчем снизу к столешнице; соль — под солонку; ложка — в ящик с приборами</tg-spoiler>\n\nВсе 15 загадок с местами для записок → https://kvestovichok.ru/kvesty/kvest-dlya-detej-na-den-rozhdeniya-doma/"
+    "status": "published",
+    "text": "<b>Три загадки для квеста на кухне</b>\n\n1. Под крышей четыре ножки, а на крыше — суп да ложки.\n2. В воде родится, а воды боится.\n3. Сама не ем, а людей кормлю.\n\nОтветы: <tg-spoiler>стол — записку скотчем снизу к столешнице; соль — под солонку; ложка — в ящик с приборами</tg-spoiler>\n\nВсе 15 загадок с местами для записок → https://kvestovichok.ru/kvesty/kvest-dlya-detej-na-den-rozhdeniya-doma/",
+    "messageId": 26,
+    "publishedAt": "2026-11-14T20:33:43.975Z",
+    "vkPostId": 6,
+    "vkPublishedAt": "2026-11-14T20:33:46.313Z"
   },
   {
     "id": "post-novogodnij-kvest",
