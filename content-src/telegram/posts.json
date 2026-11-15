@@ -178,7 +178,11 @@
     "id": "post-novogodnij-kvest",
     "scheduledFor": "2026-11-15T19:00:00+03:00",
     "text": "<b>Новогодний квест: письмо Деда Мороза</b>\n\nУтро 1 января: под ёлкой не подарок, а письмо. Дед Мороз предлагает найти подарок по подсказкам — 12 загадок по квартире и испытания от Снегурочки.\n\nГотовый сценарий → https://kvestovichok.ru/kvesty/novogodnij-kvest-dlya-detej/",
-    "status": "pending"
+    "status": "published",
+    "messageId": 27,
+    "publishedAt": "2026-11-15T20:57:38.865Z",
+    "vkPostId": 7,
+    "vkPublishedAt": "2026-11-15T20:57:40.980Z"
   },
   {
     "id": "post-pismo-5-shagov",
