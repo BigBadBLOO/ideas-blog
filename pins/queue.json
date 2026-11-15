@@ -639,8 +639,10 @@
     "link": "https://kvestovichok.ru/kvesty/kvest-dlya-detej-10-12-let/?utm_source=pinterest&utm_medium=pin&utm_content=kvest-dlya-detej-10-12-let-5",
     "imageUrl": "https://kvestovichok.ru/pins/kvest-dlya-detej-10-12-let/5.png",
     "imagePath": "public/pins/kvest-dlya-detej-10-12-let/5.png",
-    "status": "pending",
-    "scheduledFor": "2026-11-14T14:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-11-14T14:00:00+03:00",
+    "pinId": "617626536448856726",
+    "publishedAt": "2026-11-15T21:48:24.438Z"
   },
   {
     "id": "kvest-dlya-detej-na-den-rozhdeniya-doma-5",
