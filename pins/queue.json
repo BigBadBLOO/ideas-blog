@@ -654,8 +654,10 @@
     "link": "https://kvestovichok.ru/kvesty/kvest-dlya-detej-na-den-rozhdeniya-doma/?utm_source=pinterest&utm_medium=pin&utm_content=kvest-dlya-detej-na-den-rozhdeniya-doma-5",
     "imageUrl": "https://kvestovichok.ru/pins/kvest-dlya-detej-na-den-rozhdeniya-doma/5.png",
     "imagePath": "public/pins/kvest-dlya-detej-na-den-rozhdeniya-doma/5.png",
-    "status": "pending",
-    "scheduledFor": "2026-11-14T20:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-11-14T20:00:00+03:00",
+    "pinId": "617626536448867719",
+    "publishedAt": "2026-11-16T15:45:12.793Z"
   },
   {
     "id": "novogodnij-kvest-dlya-detej-5",
