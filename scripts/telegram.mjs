@@ -1,5 +1,5 @@
 // Usage:
-//   node --use-system-ca --env-file=.env scripts/telegram.mjs check          проверить бота и права в канале
+//   node --use-system-ca --env-file=.env scripts/telegram.mjs check          бот, права в канале и число подписчиков
 //   node --use-system-ca --env-file=.env scripts/telegram.mjs publish [N]    опубликовать до N постов, чьё время наступило
 // Env: TELEGRAM_BOT_TOKEN (от @BotFather), TELEGRAM_CHANNEL (например @kvestovichok)
 // Очередь: content-src/telegram/posts.json — { id, text (HTML), file?, pin?, scheduledFor, status }
@@ -37,7 +37,8 @@ async function check() {
     const me = await callApi('getMe');
     const chat = await callApi('getChat', { chat_id: TELEGRAM_CHANNEL });
     const member = await callApi('getChatMember', { chat_id: TELEGRAM_CHANNEL, user_id: me.id });
-    console.log(`Бот @${me.username}, канал «${chat.title}», статус: ${member.status}`);
+    const subscribers = await callApi('getChatMemberCount', { chat_id: TELEGRAM_CHANNEL });
+    console.log(`Бот @${me.username}, канал «${chat.title}», статус: ${member.status}, подписчиков: ${subscribers}`);
     console.log(`Публикация: ${member.can_post_messages ? 'да' : 'нет'}, закрепление: ${member.can_pin_messages ?? member.can_edit_messages ? 'да' : 'нет'}`);
 }
 
