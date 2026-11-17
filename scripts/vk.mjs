@@ -1,5 +1,5 @@
 // Usage:
-//   node --use-system-ca --env-file=.env scripts/vk.mjs check               проверить ключ и группу
+//   node --use-system-ca --env-file=.env scripts/vk.mjs check               проверить ключ, группу и число подписчиков
 //   node --use-system-ca --env-file=.env scripts/vk.mjs preview <id>        показать, как пост из очереди будет выглядеть в ВК
 //   node --use-system-ca --env-file=.env scripts/vk.mjs publish [N]         повторить в ВК до N постов, уже вышедших в Telegram
 // Env: VK_GROUP_TOKEN (ключ сообщества с правом «стена»), VK_GROUP_ID (число)
@@ -78,10 +78,10 @@ function buildPost(post) {
 }
 
 async function check() {
-    const [group] = (await callApi('groups.getById', { group_id: VK_GROUP_ID })).groups;
+    const [group] = (await callApi('groups.getById', { group_id: VK_GROUP_ID, fields: 'members_count' })).groups;
     const { permissions } = await callApi('groups.getTokenPermissions', {});
     const names = permissions.map((permission) => permission.name);
-    console.log(`Группа «${group.name}» (vk.com/${group.screen_name}), права ключа: ${names.join(', ')}`);
+    console.log(`Группа «${group.name}» (vk.com/${group.screen_name}), подписчиков: ${group.members_count ?? '?'}, права ключа: ${names.join(', ')}`);
 
     if (!names.includes('wall')) {
         throw new Error('У ключа нет права «стена» — пересоздайте ключ в «Управление → Работа с API»');
