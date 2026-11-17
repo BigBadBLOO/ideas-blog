@@ -3,11 +3,19 @@ import ArticleCard from '@/components/ArticleCard.astro';
 import ProductCard from '@/components/ProductCard.astro';
 import TelegramCta from '@/components/TelegramCta.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { getListedArticles, getListedProducts } from '@/lib/content';
+import { getListedArticles, getListedProducts, isInSeason } from '@/lib/content';
 import { CATEGORIES, SITE } from '@/site.config';
 
-const articles = (await getListedArticles()).slice(0, 9);
-const products = (await getListedProducts()).slice(0, 4);
+// Главная собирается при каждом деплое, поэтому сезонный блок меняется сам по датам season у статей.
+const listed = await getListedArticles();
+const seasonal = listed.filter((article) => isInSeason(article.data.season)).slice(0, 6);
+const articles = listed.filter((article) => !seasonal.includes(article)).slice(0, 9);
+
+// Товары, на которые ссылаются сезонные статьи, — первыми.
+const seasonalProductIds = new Set(seasonal.flatMap((article) => article.data.products.map((product) => product.id)));
+const products = (await getListedProducts()).sort(
+    (a, b) => Number(seasonalProductIds.has(b.id)) - Number(seasonalProductIds.has(a.id)),
+);
 ---
 
 <BaseLayout title={SITE.name} description={SITE.tagline}>
@@ -20,6 +28,19 @@ const products = (await getListedProducts()).slice(0, 4);
             </p>
             <a class="button" href="/magazin/">Выбрать квест</a>
         </section>
+
+        {
+            seasonal.length > 0 && (
+                <section class="stack">
+                    <h2>Актуально сейчас</h2>
+                    <div class="grid">
+                        {seasonal.map((article) => (
+                            <ArticleCard article={article} />
+                        ))}
+                    </div>
+                </section>
+            )
+        }
 
         <nav class="categories">
             {

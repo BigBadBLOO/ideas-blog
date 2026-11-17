@@ -1,0 +1,121 @@
+{
+  "phrase": "новогодние ребусы для детей",
+  "fetchedAt": "2026-11-17T20:42:10.048Z",
+  "months": [
+    {
+      "month": "2024-11",
+      "count": 599,
+      "share": 0.000005152338143242123
+    },
+    {
+      "month": "2024-12",
+      "count": 4543,
+      "share": 0.00003786342828357245
+    },
+    {
+      "month": "2025-01",
+      "count": 513,
+      "share": 0.000004323034989353602
+    },
+    {
+      "month": "2025-02",
+      "count": 24,
+      "share": 2.103404549227531e-7
+    },
+    {
+      "month": "2025-03",
+      "count": 14,
+      "share": 1.1682599965052203e-7
+    },
+    {
+      "month": "2025-04",
+      "count": null,
+      "share": null
+    },
+    {
+      "month": "2025-05",
+      "count": null,
+      "share": null
+    },
+    {
+      "month": "2025-06",
+      "count": null,
+      "share": null
+    },
+    {
+      "month": "2025-07",
+      "count": null,
+      "share": null
+    },
+    {
+      "month": "2025-08",
+      "count": null,
+      "share": null
+    },
+    {
+      "month": "2025-09",
+      "count": null,
+      "share": null
+    },
+    {
+      "month": "2025-10",
+      "count": 28,
+      "share": 2.3751957214822442e-7
+    },
+    {
+      "month": "2025-11",
+      "count": 536,
+      "share": 0.000004628911465866251
+    },
+    {
+      "month": "2025-12",
+      "count": 4151,
+      "share": 0.000036493059019427235
+    },
+    {
+      "month": "2026-01",
+      "count": 438,
+      "share": 0.000004227166151728084
+    },
+    {
+      "month": "2026-02",
+      "count": 13,
+      "share": 1.3792422194812817e-7
+    },
+    {
+      "month": "2026-03",
+      "count": 9,
+      "share": 8.20213904767155e-8
+    },
+    {
+      "month": "2026-04",
+      "count": 10,
+      "share": 8.874795039881134e-8
+    },
+    {
+      "month": "2026-05",
+      "count": null,
+      "share": null
+    },
+    {
+      "month": "2026-06",
+      "count": null,
+      "share": null
+    },
+    {
+      "month": "2026-07",
+      "count": null,
+      "share": null
+    },
+    {
+      "month": "2026-08",
+      "count": null,
+      "share": null
+    },
+    {
+      "month": "2026-09",
+      "count": null,
+      "share": null
+    }
+  ]
+}

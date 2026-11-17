@@ -15,3 +15,17 @@ export const getListedArticles = async () =>
 export const getListedProducts = () => getCollection('products', ({ data }) => !data.isDraft);
 
 export const isProductFree = (product: { data: { isFree: boolean } }) => !SITE.isSalesEnabled || product.data.isFree;
+
+const monthDay = (date: Date) => date.toISOString().slice(5, 10);
+
+// Статья «в сезоне» от promoteFrom до недели после пика; окно может переходить через Новый год.
+export const isInSeason = (season: { promoteFrom: string; peak: string } | undefined, now = new Date()) => {
+    if (!season) {
+        return false;
+    }
+    const end = new Date(`2001-${season.peak}T00:00:00Z`);
+    end.setUTCDate(end.getUTCDate() + 7);
+    const [from, to, today] = [season.promoteFrom, monthDay(end), monthDay(now)];
+
+    return from <= to ? from <= today && today <= to : today >= from || today <= to;
+};
