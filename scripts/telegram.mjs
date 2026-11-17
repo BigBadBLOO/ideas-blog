@@ -4,8 +4,8 @@
 // Env: TELEGRAM_BOT_TOKEN (от @BotFather), TELEGRAM_CHANNEL (например @kvestovichok)
 // Очередь: content-src/telegram/posts.json — { id, text (HTML), file?, pin?, scheduledFor, status }
 
-import { readFile, writeFile } from 'node:fs/promises';
-import { basename } from 'node:path';
+import { readdir, readFile, writeFile } from 'node:fs/promises';
+import { basename, join } from 'node:path';
 
 const QUEUE_PATH = 'content-src/telegram/posts.json';
 const { TELEGRAM_BOT_TOKEN, TELEGRAM_CHANNEL } = process.env;
@@ -42,7 +42,38 @@ async function check() {
     console.log(`Публикация: ${member.can_post_messages ? 'да' : 'нет'}, закрепление: ${member.can_pin_messages ?? member.can_edit_messages ? 'да' : 'нет'}`);
 }
 
+// Картинка поста — пин статьи, на которую ссылается пост. Без картинки Дзен (@zen_sync_bot) переносит пост
+// с пустой обложкой, и лента его почти не показывает. Свой файл — поле photo, отключить — photo: false.
+async function findPhoto(post) {
+    if (post.photo !== undefined) {
+        return post.photo || null;
+    }
+    const slug = post.text.match(/kvestovichok\.ru\/[a-z-]+\/([a-z0-9-]+)\//)?.[1];
+    const dir = slug && join('public/pins', slug);
+    const pins = dir ? (await readdir(dir).catch(() => [])).filter((name) => name.endsWith('.png')).sort() : [];
+
+    if (!pins.length) {
+        return null;
+    }
+    // Разные посты об одной статье получают разные пины
+    const hash = [...post.id].reduce((sum, char) => (sum * 31 + char.charCodeAt(0)) >>> 0, 0);
+
+    return join(dir, pins[hash % pins.length]);
+}
+
 async function sendPost(post) {
+    const photo = !post.file && (await findPhoto(post));
+
+    if (photo) {
+        const form = new FormData();
+        form.append('chat_id', TELEGRAM_CHANNEL);
+        form.append('caption', post.text);
+        form.append('parse_mode', 'HTML');
+        form.append('photo', new Blob([await readFile(photo)], { type: 'image/png' }), basename(photo));
+
+        return callApi('sendPhoto', form);
+    }
+
     if (!post.file) {
         return callApi('sendMessage', {
             chat_id: TELEGRAM_CHANNEL,
