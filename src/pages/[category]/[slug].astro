@@ -7,6 +7,7 @@ import ProductCard from '@/components/ProductCard.astro';
 import TelegramCta from '@/components/TelegramCta.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getBuildableArticles, getListedArticles } from '@/lib/content';
+import { formatAges } from '@/lib/format';
 import { getBreadcrumbJsonLd, PUBLISHER } from '@/lib/seo';
 import { CATEGORIES, SITE } from '@/site.config';
 
@@ -21,7 +22,8 @@ export async function getStaticPaths() {
 
 const { article } = Astro.props;
 const { title, description, category, publishedAt, updatedAt } = article.data;
-const { Content } = await render(article);
+const { Content, headings } = await render(article);
+const toc = headings.filter((heading) => heading.depth === 2);
 const products = (await getEntries(article.data.products)).filter((product) => !product.data.isDraft);
 const related = (await getListedArticles())
     .filter((item) => item.data.category === category && item.id !== article.id)
@@ -58,6 +60,33 @@ const jsonLd = [
                 {dateFormatter.format(updatedAt ?? publishedAt)}
             </p>
         </header>
+
+        {
+            products[0] && (
+                <a class="quest-banner" href={`${SITE.telegramBotUrl}?start=${products[0].id}`} target="_blank" rel="noopener">
+                    <span>
+                        <strong>Готовый квест «{products[0].data.title}» для печати</strong>
+                        <span class="muted"> — бесплатно в Telegram, {formatAges(products[0].data.ages)}</span>
+                    </span>
+                    <span class="quest-banner__action">Забрать →</span>
+                </a>
+            )
+        }
+
+        {
+            toc.length >= 4 && (
+                <details class="toc">
+                    <summary>Содержание</summary>
+                    <ol>
+                        {toc.map((heading) => (
+                            <li>
+                                <a href={`#${heading.slug}`}>{heading.text}</a>
+                            </li>
+                        ))}
+                    </ol>
+                </details>
+            )
+        }
 
         <AdSlot slot="top" />
 
@@ -109,6 +138,54 @@ const jsonLd = [
 
     .article-header p {
         margin: 0;
+    }
+
+    @media (max-width: 640px) {
+        .article-header h1 {
+            font-size: 1.8rem;
+        }
+    }
+
+    .quest-banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 18px;
+        border-radius: var(--radius);
+        background: #e8f6fd;
+        border: 1px solid #bfe6f8;
+        color: inherit;
+        text-decoration: none;
+        line-height: 1.4;
+    }
+
+    .quest-banner__action {
+        flex-shrink: 0;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: var(--color-telegram);
+        color: #fff;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .toc {
+        padding: 12px 18px;
+        border-radius: var(--radius);
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+    }
+
+    .toc summary {
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .toc ol {
+        margin: 12px 0 4px;
+        padding-left: 20px;
+        line-height: 1.7;
     }
 
 </style>

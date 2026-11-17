@@ -26,7 +26,7 @@ const products = (await getListedProducts()).sort(
                 Готовые квесты с поиском подарка, конкурсы и игры по возрастам. Скачайте, распечатайте — и праздник
                 готов.
             </p>
-            <a class="button" href="/magazin/">Выбрать квест</a>
+            <a class="button" href="/magazin/">Бесплатные квесты для печати</a>
         </section>
 
         {
@@ -91,6 +91,12 @@ const products = (await getListedProducts()).sort(
 
     .hero p {
         margin: 0 0 24px;
+    }
+
+    @media (max-width: 640px) {
+        .hero h1 {
+            font-size: 1.9rem;
+        }
     }
 
     .categories {
