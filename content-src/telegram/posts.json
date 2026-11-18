@@ -208,7 +208,11 @@
     "id": "post-zagadka-mandarin",
     "scheduledFor": "2026-11-18T19:00:00+03:00",
     "text": "<b>Новогодняя загадка</b>\n\nКруглый, оранжевый, в тонкой одёжке, а внутри долек — целая семья. Без него и новогодний стол не стол.\n\nОтвет: <tg-spoiler>мандарин — записку прячем в вазе с фруктами, в прозрачном пакетике</tg-spoiler>\n\nВсе 12 загадок новогоднего квеста с местами для записок → https://kvestovichok.ru/kvesty/novogodnij-kvest-dlya-detej/",
-    "status": "pending"
+    "status": "published",
+    "messageId": 30,
+    "publishedAt": "2026-11-18T22:54:24.015Z",
+    "vkPostId": 10,
+    "vkPublishedAt": "2026-11-18T22:54:26.547Z"
   },
   {
     "id": "post-konkurs-najdi-paru",
