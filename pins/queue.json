@@ -699,8 +699,10 @@
     "link": "https://kvestovichok.ru/prazdniki/pismo-dedu-morozu-shablon/?utm_source=pinterest&utm_medium=pin&utm_content=pismo-dedu-morozu-shablon-3",
     "imageUrl": "https://kvestovichok.ru/pins/pismo-dedu-morozu-shablon/3.png",
     "imagePath": "public/pins/pismo-dedu-morozu-shablon/3.png",
-    "status": "pending",
-    "scheduledFor": "2026-11-18T09:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-11-18T09:00:00+03:00",
+    "pinId": "617626536448902478",
+    "publishedAt": "2026-11-18T15:39:12.095Z"
   },
   {
     "id": "zadaniya-dlya-kvesta-5",
@@ -712,8 +714,10 @@
     "link": "https://kvestovichok.ru/kvesty/zadaniya-dlya-kvesta/?utm_source=pinterest&utm_medium=pin&utm_content=zadaniya-dlya-kvesta-5",
     "imageUrl": "https://kvestovichok.ru/pins/zadaniya-dlya-kvesta/5.png",
     "imagePath": "public/pins/zadaniya-dlya-kvesta/5.png",
-    "status": "pending",
-    "scheduledFor": "2026-11-18T14:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-11-18T14:00:00+03:00",
+    "pinId": "617626536448902479",
+    "publishedAt": "2026-11-18T15:39:13.559Z"
   },
   {
     "id": "advent-kalendar-dlya-detej-zadaniya-6",
