@@ -819,8 +819,10 @@
     "link": "https://kvestovichok.ru/prazdniki/pismo-dedu-morozu-shablon/?utm_source=pinterest&utm_medium=pin&utm_content=pismo-dedu-morozu-shablon-4",
     "imageUrl": "https://kvestovichok.ru/pins/pismo-dedu-morozu-shablon/4.png",
     "imagePath": "public/pins/pismo-dedu-morozu-shablon/4.png",
-    "status": "pending",
-    "scheduledFor": "2026-11-20T20:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-11-20T20:00:00+03:00",
+    "pinId": "617626536448942577",
+    "publishedAt": "2026-11-20T23:05:00.861Z"
   },
   {
     "id": "kvest-dlya-detej-10-12-let-6",
