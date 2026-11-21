@@ -864,8 +864,10 @@
     "link": "https://kvestovichok.ru/kvesty/novogodnij-kvest-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=novogodnij-kvest-dlya-detej-6",
     "imageUrl": "https://kvestovichok.ru/pins/novogodnij-kvest-dlya-detej/6.png",
     "imagePath": "public/pins/novogodnij-kvest-dlya-detej/6.png",
-    "status": "pending",
-    "scheduledFor": "2026-11-21T20:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-11-21T20:00:00+03:00",
+    "pinId": "617626536448958803",
+    "publishedAt": "2026-11-21T22:10:53.626Z"
   },
   {
     "id": "novogodnie-fanty-2",
