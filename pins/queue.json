@@ -879,8 +879,10 @@
     "link": "https://kvestovichok.ru/konkursy-i-igry/novogodnie-fanty/?utm_source=pinterest&utm_medium=pin&utm_content=novogodnie-fanty-2",
     "imageUrl": "https://kvestovichok.ru/pins/novogodnie-fanty/2.png",
     "imagePath": "public/pins/novogodnie-fanty/2.png",
-    "status": "pending",
-    "scheduledFor": "2026-11-22T09:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-11-22T09:00:00+03:00",
+    "pinId": "617626536448968715",
+    "publishedAt": "2026-11-22T14:33:55.868Z"
   },
   {
     "id": "novogodnie-zagadki-dlya-detej-2",
@@ -892,8 +894,10 @@
     "link": "https://kvestovichok.ru/kvesty/novogodnie-zagadki-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=novogodnie-zagadki-dlya-detej-2",
     "imageUrl": "https://kvestovichok.ru/pins/novogodnie-zagadki-dlya-detej/2.png",
     "imagePath": "public/pins/novogodnie-zagadki-dlya-detej/2.png",
-    "status": "pending",
-    "scheduledFor": "2026-11-22T14:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-11-22T14:00:00+03:00",
+    "pinId": "617626536448968716",
+    "publishedAt": "2026-11-22T14:33:57.210Z"
   },
   {
     "id": "pismo-dedu-morozu-shablon-5",
