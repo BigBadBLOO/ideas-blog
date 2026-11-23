@@ -924,8 +924,10 @@
     "link": "https://kvestovichok.ru/prazdniki/scenarij-dnya-rozhdeniya-rebenka-doma/?utm_source=pinterest&utm_medium=pin&utm_content=scenarij-dnya-rozhdeniya-rebenka-doma-6",
     "imageUrl": "https://kvestovichok.ru/pins/scenarij-dnya-rozhdeniya-rebenka-doma/6.png",
     "imagePath": "public/pins/scenarij-dnya-rozhdeniya-rebenka-doma/6.png",
-    "status": "pending",
-    "scheduledFor": "2026-11-23T09:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-11-23T09:00:00+03:00",
+    "pinId": "617626536448990664",
+    "publishedAt": "2026-11-23T18:06:47.711Z"
   },
   {
     "id": "zadaniya-dlya-kvesta-6",
@@ -937,8 +939,10 @@
     "link": "https://kvestovichok.ru/kvesty/zadaniya-dlya-kvesta/?utm_source=pinterest&utm_medium=pin&utm_content=zadaniya-dlya-kvesta-6",
     "imageUrl": "https://kvestovichok.ru/pins/zadaniya-dlya-kvesta/6.png",
     "imagePath": "public/pins/zadaniya-dlya-kvesta/6.png",
-    "status": "pending",
-    "scheduledFor": "2026-11-23T14:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-11-23T14:00:00+03:00",
+    "pinId": "617626536448990666",
+    "publishedAt": "2026-11-23T18:06:49.020Z"
   },
   {
     "id": "advent-kalendar-dlya-detej-zadaniya-7",
