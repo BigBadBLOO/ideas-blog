@@ -257,8 +257,12 @@
   {
     "id": "post-zimnie-zagadki-narodnye",
     "scheduledFor": "2026-11-23T19:00:00+03:00",
-    "status": "pending",
-    "text": "<b>Народные загадки про зиму</b>\n\n1. Не снег и не лёд, а серебром деревья уберёт.\n2. Без досок, без топоров через речку мост готов.\n3. Зимой белый, летом серый.\n\nОтветы: <tg-spoiler>иней; лёд; заяц</tg-spoiler>\n\nЗагадки про зиму и Новый год для детей 3–12 лет → https://kvestovichok.ru/kvesty/novogodnie-zagadki-dlya-detej/"
+    "status": "published",
+    "text": "<b>Народные загадки про зиму</b>\n\n1. Не снег и не лёд, а серебром деревья уберёт.\n2. Без досок, без топоров через речку мост готов.\n3. Зимой белый, летом серый.\n\nОтветы: <tg-spoiler>иней; лёд; заяц</tg-spoiler>\n\nЗагадки про зиму и Новый год для детей 3–12 лет → https://kvestovichok.ru/kvesty/novogodnie-zagadki-dlya-detej/",
+    "messageId": 35,
+    "publishedAt": "2026-11-24T02:50:44.650Z",
+    "vkPostId": 15,
+    "vkPublishedAt": "2026-11-24T02:50:46.545Z"
   },
   {
     "id": "post-otvet-pro-shchenka",
