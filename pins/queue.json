@@ -984,8 +984,10 @@
     "link": "https://kvestovichok.ru/kvesty/novogodnie-zagadki-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=novogodnie-zagadki-dlya-detej-3",
     "imageUrl": "https://kvestovichok.ru/pins/novogodnie-zagadki-dlya-detej/3.png",
     "imagePath": "public/pins/novogodnie-zagadki-dlya-detej/3.png",
-    "status": "pending",
-    "scheduledFor": "2026-11-24T14:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-11-24T14:00:00+03:00",
+    "pinId": "617626536449024009",
+    "publishedAt": "2026-11-25T17:12:09.506Z"
   },
   {
     "id": "igry-na-den-rozhdeniya-dlya-detej-7",
@@ -997,8 +999,10 @@
     "link": "https://kvestovichok.ru/konkursy-i-igry/igry-na-den-rozhdeniya-dlya-detej/?utm_source=pinterest&utm_medium=pin&utm_content=igry-na-den-rozhdeniya-dlya-detej-7",
     "imageUrl": "https://kvestovichok.ru/pins/igry-na-den-rozhdeniya-dlya-detej/7.png",
     "imagePath": "public/pins/igry-na-den-rozhdeniya-dlya-detej/7.png",
-    "status": "pending",
-    "scheduledFor": "2026-11-24T20:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-11-24T20:00:00+03:00",
+    "pinId": "617626536449024011",
+    "publishedAt": "2026-11-25T17:12:10.830Z"
   },
   {
     "id": "konkursy-na-den-rozhdeniya-dlya-detej-7",
