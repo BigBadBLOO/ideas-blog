@@ -1044,8 +1044,10 @@
     "link": "https://kvestovichok.ru/kvesty/kvest-dlya-detej-na-den-rozhdeniya-doma/?utm_source=pinterest&utm_medium=pin&utm_content=kvest-dlya-detej-na-den-rozhdeniya-doma-7",
     "imageUrl": "https://kvestovichok.ru/pins/kvest-dlya-detej-na-den-rozhdeniya-doma/7.png",
     "imagePath": "public/pins/kvest-dlya-detej-na-den-rozhdeniya-doma/7.png",
-    "status": "pending",
-    "scheduledFor": "2026-11-25T20:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-11-25T20:00:00+03:00",
+    "pinId": "617626536449040069",
+    "publishedAt": "2026-11-26T16:53:13.801Z"
   },
   {
     "id": "novogodnie-fanty-4",
@@ -1057,8 +1059,10 @@
     "link": "https://kvestovichok.ru/konkursy-i-igry/novogodnie-fanty/?utm_source=pinterest&utm_medium=pin&utm_content=novogodnie-fanty-4",
     "imageUrl": "https://kvestovichok.ru/pins/novogodnie-fanty/4.png",
     "imagePath": "public/pins/novogodnie-fanty/4.png",
-    "status": "pending",
-    "scheduledFor": "2026-11-26T09:00:00+03:00"
+    "status": "published",
+    "scheduledFor": "2026-11-26T09:00:00+03:00",
+    "pinId": "617626536449040070",
+    "publishedAt": "2026-11-26T16:53:15.192Z"
   },
   {
     "id": "novogodnie-zagadki-dlya-detej-4",
